@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.b100e6da.chunk.css",
-    "main.js": "/static/js/main.3b7d3126.chunk.js",
-    "main.js.map": "/static/js/main.3b7d3126.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.9690d70f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.9690d70f.js.map",
-    "static/js/2.b19a190c.chunk.js": "/static/js/2.b19a190c.chunk.js",
-    "static/js/2.b19a190c.chunk.js.map": "/static/js/2.b19a190c.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.d30b39409b991db313088b863a241821.js": "/precache-manifest.d30b39409b991db313088b863a241821.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.b100e6da.chunk.css.map": "/static/css/main.b100e6da.chunk.css.map"
+    "main.css": "https://louiscklaw.github.io/vote-registration-statistic/static/css/main.b100e6da.chunk.css",
+    "main.js": "https://louiscklaw.github.io/vote-registration-statistic/static/js/main.c2ba2b07.chunk.js",
+    "main.js.map": "https://louiscklaw.github.io/vote-registration-statistic/static/js/main.c2ba2b07.chunk.js.map",
+    "runtime-main.js": "https://louiscklaw.github.io/vote-registration-statistic/static/js/runtime-main.4276f733.js",
+    "runtime-main.js.map": "https://louiscklaw.github.io/vote-registration-statistic/static/js/runtime-main.4276f733.js.map",
+    "static/js/2.b19a190c.chunk.js": "https://louiscklaw.github.io/vote-registration-statistic/static/js/2.b19a190c.chunk.js",
+    "static/js/2.b19a190c.chunk.js.map": "https://louiscklaw.github.io/vote-registration-statistic/static/js/2.b19a190c.chunk.js.map",
+    "index.html": "https://louiscklaw.github.io/vote-registration-statistic/index.html",
+    "precache-manifest.2de0dfd29ebbcf6d05a28a3d2f3a2cfc.js": "https://louiscklaw.github.io/vote-registration-statistic/precache-manifest.2de0dfd29ebbcf6d05a28a3d2f3a2cfc.js",
+    "service-worker.js": "https://louiscklaw.github.io/vote-registration-statistic/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "https://louiscklaw.github.io/vote-registration-statistic/static/css/main.b100e6da.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.9690d70f.js",
+    "static/js/runtime-main.4276f733.js",
     "static/js/2.b19a190c.chunk.js",
     "static/css/main.b100e6da.chunk.css",
-    "static/js/main.3b7d3126.chunk.js"
+    "static/js/main.c2ba2b07.chunk.js"
   ]
 }
