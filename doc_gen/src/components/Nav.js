@@ -1,5 +1,7 @@
 import React from 'react';
 
+import TopMenu from './TopMenu'
+
 export default () => {
   return (
     <nav className="navbar">
@@ -18,13 +20,7 @@ export default () => {
         <div id="navbarMenu" className="navbar-menu">
           <div className="navbar-end">
             <div className="tabs is-right">
-              {/* <ul>
-                <li className="is-active">Home</li>
-                <li>Examples</li>
-                <li>Features</li>
-                <li>Team</li>
-                <li>Help</li>
-              </ul> */}
+              <TopMenu />
               <span className="navbar-item">
                 <a className="button is-white is-outlined"
                   href="https://github.com/louiscklaw/vote-registration-statistic">

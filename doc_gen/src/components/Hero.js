@@ -2,22 +2,43 @@ import React from 'react';
 
 import Nav from './Nav'
 
-export default () => {
+import './Hero.css'
+
+export default (props) => {
+
+  function showSearchInput(show_in) {
+    if(show_in){
+      return (
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <h1 className="title">香港統計數字一覽</h1>
+            <p>{props.location}</p>
+            <p class="control has-icons-left">
+              <input class="input is-rounded is-large" type="text" placeholder="Search" />
+              <span class="icon is-small is-left">
+                <i class="fas fa-binoculars"></i>
+              </span>
+            </p>
+
+          </div>
+        </div>
+      )
+    }else{
+      return (
+        <div>
+          <div className="hero-body-empty">
+          </div>
+        </div>
+      )
+    }
+  }
+
   return (
     <section className="hero is-info is-medium is-bold">
       <div className="hero-head">
         <Nav />
       </div>
-      <div className="hero-body">
-        <div className="container has-text-centered">
-          <h1 className="title">香港統計數字一覽</h1>
-          {/* <h2 className="subtitle">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </h2> */}
-        </div>
-      </div>
+      { showSearchInput(props.show_search_input)}
     </section>
 
   )
