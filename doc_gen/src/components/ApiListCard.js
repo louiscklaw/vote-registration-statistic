@@ -1,20 +1,19 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-
 import _const from '../_const'
 
 // import AHref from './AHref'
 import Card from './Card'
+import TagList from './TagList'
 
-import './ApiDetailCard.css'
+import './ApiListCard.css'
 
 // const test_url = 'assets/api_details/aahk-team1-flight-info.json'
 
 class ApiDetailCard extends Component {
   state = {
     api_detail: null,
-    isLoading: false,
     maintainer: null
   }
 
@@ -71,19 +70,24 @@ class ApiDetailCard extends Component {
     }
   }
 
-  getApiDetail(package_name){
+  getApiDetail(json_in, package_name){
+    let {resources, groups, organization} = json_in.result
+    let {title, name, notes} = json_in.result
+
+    let set_group_names = new Set([
+      ...groups.map(x => x.display_name),
+      ...groups.map(x => x.title)
+    ])
+    let group_names = Array.from(set_group_names)
+
     return (
       <div className="api-detail">
         <Card>
-          <h3 className="api-name">CCI成份屋苑的物業資料</h3>
-          <p>此CSV提供CCI成份屋苑的物業資料包括其屋苑設施, 發展商, 入伙年份及總座數</p>
+          <p>{title}</p>
+          <p>{name}</p>
+          <p>{notes}</p>
 
-          <div className="tags">
-            <span className="tag">房屋</span>
-            <span className="tag">房屋</span>
-            <span className="tag">房屋</span>
-            <span className="tag">房屋</span>
-          </div>
+          <TagList tag_list={group_names}/>
           <Link to={`api_detail/${package_name}`} >detail</Link>
         </Card>
       </div>
@@ -91,17 +95,13 @@ class ApiDetailCard extends Component {
   }
 
   render(){
-    const { isLoading} = this.state
-
-    if (isLoading){
-      return (<pre>is loading</pre>)
-    }
+    const {json_to_list, package_name} = this.props
 
     return(
-      <div>
-        {this.getApiDetail(this.props.package_to_check)}
-      </div>
-    )
+        <div>
+          {this.getApiDetail(json_to_list, package_name)}
+        </div>
+      )
   }
 }
 
