@@ -164,15 +164,15 @@ function getRandomNum(){
 function getDateSelectors(form_id)
 {
   return `
-  <div class="select">
+  <div className="select">
     ${getYearHtmlSelect(`year`)}
   </div>
 
-  <div class="select">
+  <div className="select">
     ${getMonthHtmlSelect(`month`)}
   </div>
 
-  <div class="select">
+  <div className="select">
     ${getDayHtmlSelect(`day`)}
   </div>
   `
@@ -181,35 +181,35 @@ function getDateSelectors(form_id)
 function getDateForm(form_id_in){
   return `
   ${getDateSelectors(form_id_in)}
-  <button class="button is-link" style="margin-top: 10px;">Get</button>
+  <button className="button is-link" style="margin-top: 10px;">Get</button>
   `
 }
 
 function getTideForm(sun_form_id){
   return `
   ${getDateSelectors(sun_form_id)}
-  <button class="button is-link" style="margin-top: 10px;">Get</button>
+  <button className="button is-link" style="margin-top: 10px;">Get</button>
   `
 }
 function getSunForm(sun_form_id){
   return `
   ${getDateSelectors(sun_form_id)}
-  <button class="button is-link" style="margin-top: 10px;">Get</button>
+  <button className="button is-link" style="margin-top: 10px;">Get</button>
   `
 }
 
 function getYearSelector( id_in ) {
   return `
-<div class="control has-icons-left">
-  <div class="select">
+<div className="control has-icons-left">
+  <div className="select">
     <select>
       <option selected>Country</option>
       <option>Select dropdown</option>
       <option>With options</option>
     </select>
   </div>
-  <span class="icon is-left">
-    <i class="fas fa-globe"></i>
+  <span className="icon is-left">
+    <i className="fas fa-globe"></i>
   </span>
 </div>
 `
@@ -273,9 +273,9 @@ function getWeather( req_in, datatype_in ) {
 
 function genHtml( test_list ) {
   return test_list.map( x => {
-    return `<div class="test_set">
+    return `<div className="test_set">
     <div style="width: 100%;">
-      <h3 class="subtitle is-3 has-text-link" style="text-decoration: underline;">${x[2]}</h3>
+      <h3 className="subtitle is-3 has-text-link" style="text-decoration: underline;">${x[2]}</h3>
       ${x[3] == undefined ? '' : getForm(x[3], x[4])}
     </div>
     <div id="${getReqHtmlId(x[ 1 ])}"></div>

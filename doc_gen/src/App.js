@@ -5,8 +5,9 @@ import Hero from './components/Hero'
 import Footer from './components/Footer'
 import all_api_manifest from './all_api_manifest_9.json'
 
-import Content from './components/Content'
-import AppDetail from './components/AppDetail'
+import About from './pages/About'
+import ApiList from './pages/ApiList'
+import ApiDetail from './pages/ApiDetail'
 
 import './App.css';
 
@@ -15,22 +16,30 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
+
           <Route exact path="/">
             <Hero show_search_input={true} />
             <section className="section">
 
-              <Content all_api_list={all_api_manifest} />
+              <ApiList all_api_list={all_api_manifest} />
+            </section>
+          </Route>
+
+          <Route path="/about">
+            <Hero show_search_input={false} />
+            <section className="section">
+              <About />
             </section>
           </Route>
 
           <Route path="/api_detail/:api_name">
             <Hero show_search_input={false} />
             <section className="section">
-              <AppDetail />
+              <ApiDetail />
             </section>
           </Route>
-        </Switch>
 
+        </Switch>
         <Footer />
       </div>
     </BrowserRouter>

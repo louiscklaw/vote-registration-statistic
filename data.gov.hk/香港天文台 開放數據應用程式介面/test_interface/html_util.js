@@ -60,7 +60,7 @@ function getTableContentFromJson(json_in){
   let thead = getTheads(json_in.fields)
   let tfoot = getTfoots(json_in.fields)
   let tbody = getTbodys(json_in.data)
-  return `<table class="table is-fullwidth is-hoverable is-narrow is-bordered">
+  return `<table className="table is-fullwidth is-hoverable is-narrow is-bordered">
     ${thead}
     ${tbody}
     ${tfoot}

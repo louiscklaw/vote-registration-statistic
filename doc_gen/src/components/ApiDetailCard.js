@@ -79,12 +79,12 @@ class ApiDetailCard extends Component {
           <p>此CSV提供CCI成份屋苑的物業資料包括其屋苑設施, 發展商, 入伙年份及總座數</p>
 
           <div className="tags">
-            <span class="tag">房屋</span>
-            <span class="tag">房屋</span>
-            <span class="tag">房屋</span>
-            <span class="tag">房屋</span>
+            <span className="tag">房屋</span>
+            <span className="tag">房屋</span>
+            <span className="tag">房屋</span>
+            <span className="tag">房屋</span>
           </div>
-          <Link to="api_detail/helloworld" >detail</Link>
+          <Link to={`api_detail/${package_name}`} >detail</Link>
         </Card>
       </div>
     )

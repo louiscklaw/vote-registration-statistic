@@ -91,8 +91,8 @@ function getWeather( req_in, req_html_id, result_html_id ) {
 
 function genHtml(test_list) {
   return test_list.map( x => {
-    return `<div class="test_set">
-    <h3 class="subtitle is-3 has-text-link" style="text-decoration: underline;">${x[3]}</h3>
+    return `<div className="test_set">
+    <h3 className="subtitle is-3 has-text-link" style="text-decoration: underline;">${x[3]}</h3>
     <div id="${x[ 1 ]}"></div>
     <div id="${x[ 2 ]}"></div>
   </div>`
