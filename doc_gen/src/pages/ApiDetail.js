@@ -14,6 +14,7 @@ import ApiResources from '../components/Api/ApiResources'
 import JsonOrganization from '../components/Json/JsonOrganization'
 
 import ApiRequestContainer from '../components/ApiRequest/ApiRequestContainer'
+import ApiDataDictionary from '../components/Api/ApiDataDictionary';
 
 export default () => {
   let {api_name} = useParams();
@@ -30,15 +31,15 @@ export default () => {
         <BackButton />
         <div className="app-detail">
 
+          <div className="tile is-ancestor">
+            <ApiDataDictionary result_in={result}/>
+          </div>
+
           <ApiResources json_res_in={resources} />
 
           <div className="tile is-ancestor">
             <JsonGroups json_group_in={groups} />
             <JsonOrganization json_org_in={organization}/>
-          </div>
-
-          <div className="tile is-ancestor">
-            <ApiRequestContainer />
           </div>
 
           <div className="tile is-ancestor">

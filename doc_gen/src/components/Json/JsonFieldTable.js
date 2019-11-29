@@ -8,9 +8,15 @@ class TableExample extends Component{
     return (<code>{code_in}</code>)
   }
 
+  getHrefLink(link_in){
+    return (<a href={link_in}>{link_in}</a>)
+  }
+
   renFieldValue(name_in, value_in){
     if (name_in.search('id') > -1){
       return (<td>{this.getCodeText(value_in)}</td>)
+    }else if(value_in.search(/https|http/)>-1){
+      return (<td>{this.getHrefLink(value_in)}</td>)
     }else{
       return (<td>{value_in}</td>)
     }
@@ -67,7 +73,7 @@ class TableExample extends Component{
       <div className="json-field-table">
         <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
           {this.renTableHead()}
-          {this.renTableFoot()}
+          {/* {this.renTableFoot()} */}
           {this.renTableBody(this.props.json_in)}
         </table>
       </div>

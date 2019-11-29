@@ -1,3 +1,12 @@
+import React from 'react';
+
+function getCodeText( code_in ) {
+  return (<code>{code_in}</code>)
+}
+
+function getHrefLink( link_in ) {
+  return (<a href={link_in}>{link_in}</a>)
+}
 
 function PrettyJson(json_in){
   return JSON.stringify(json_in, null , 1);
@@ -16,7 +25,9 @@ function PrettyApiJsonResponse(json_response_in, length_to_trunc=300){
       }
   }
 }
-export {
+export  {
   PrettyJson,
-  PrettyApiJsonResponse
+  PrettyApiJsonResponse,
+  getCodeText,
+  getHrefLink
 }

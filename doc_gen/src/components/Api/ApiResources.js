@@ -57,6 +57,7 @@ class JsonResources extends Component {
           json_res.map( json => this.renJsonResource(json) )
         }
       </div>
+
     )
   }
 }
