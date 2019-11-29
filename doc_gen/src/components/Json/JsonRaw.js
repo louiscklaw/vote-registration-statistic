@@ -23,7 +23,7 @@ class JsonRaw extends Component {
   render(){
     return (
       <div className="json-raw-container">
-        <div className="tile is-parent is-shady">
+        <div className="tile is-parent is-full is-shady">
           <article className="tile is-child is-white">
             <h3 className="title is-3">JSON RAW</h3>
             <div className="content">

@@ -7,6 +7,8 @@ import {CORS_ERROR} from '../../../const/errors'
 import {PrettyApiJsonResponse} from './common'
 import {csv_api_call_sample} from './csv_api_call_sample'
 
+import "./CsvResourceTryout.css"
+
 const language='javascript'
 const content = 'var three = 1 + 2; // This is a comment'
 
@@ -80,7 +82,7 @@ class CsvResourceTryout extends Component{
 
   render(){
     return (
-      <div className="tile is-parent is-shady">
+      <div className="tile is-parent is-6 is-shady">
         <article className="tile is-child notification is-white">
           <h3 className="title is-3 json-title">tryout-csv</h3>
           <div className="content">

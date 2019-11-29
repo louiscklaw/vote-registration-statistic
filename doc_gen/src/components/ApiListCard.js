@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 import _const from '../_const'
+import {chopLongString} from '../common'
 
 // import AHref from './AHref'
 import Card from './Card'
@@ -84,8 +85,8 @@ class ApiDetailCard extends Component {
       <div className="api-detail">
         <Card>
           <p>{title}</p>
-          <p>{name}</p>
-          <p>{notes}</p>
+          {/* <p>{name}</p> */}
+          <p>{chopLongString(notes)}</p>
 
           <TagList tag_list={group_names}/>
           <Link to={`api_detail/${package_name}`} >detail</Link>

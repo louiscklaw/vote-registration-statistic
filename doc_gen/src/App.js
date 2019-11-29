@@ -5,6 +5,8 @@ import Hero from './components/Hero'
 import Footer from './components/Footer'
 import all_api_manifest from './api_catalogue/all_api_manifest_99.json'
 
+import ScrollToTop from './components/browser/ScrollToTop'
+
 import About from './pages/About'
 import ApiList from './pages/ApiList'
 import ApiDetail from './pages/ApiDetail'
@@ -18,6 +20,7 @@ function App() {
         <Switch>
 
           <Route exact path="/">
+            <ScrollToTop />
             <Hero show_search_input={true} />
             <section className="section">
 
@@ -26,6 +29,7 @@ function App() {
           </Route>
 
           <Route path="/about">
+            <ScrollToTop />
             <Hero show_search_input={false} />
             <section className="section">
               <About />
@@ -33,6 +37,7 @@ function App() {
           </Route>
 
           <Route path="/api_detail/:api_name">
+            <ScrollToTop />
             <Hero show_search_input={false} />
             <section className="section">
               <ApiDetail api_catalogue={all_api_manifest}/>

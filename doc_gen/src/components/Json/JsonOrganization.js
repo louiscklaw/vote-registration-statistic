@@ -11,7 +11,7 @@ class JsonOrganization extends Component{
     let {description, name, title, id} = json_in
 
     return(
-      <div className="tile is-parent is-shady">
+      <div className="tile is-parent is-6 is-shady">
         <article className="tile is-child notification is-white">
           <h3 className="title is-3 json-title">organization</h3>
 

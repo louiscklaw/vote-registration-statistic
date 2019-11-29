@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => {
   return (
-              <div className="tile is-parent is-shady">
+              <div className="tile is-parent is-6 is-shady">
             <article className="tile is-child notification is-white">
               <p className="title">Third column</p>
               <p className="subtitle">With some content</p>

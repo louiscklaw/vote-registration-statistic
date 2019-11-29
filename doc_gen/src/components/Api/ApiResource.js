@@ -9,7 +9,7 @@ class JsonResource extends Component {
     let json_in = this.props.json_res_in
 
     return (
-        <div className="tile is-parent is-shady">
+        <div className="tile is-parent is-6 is-shady">
           <article className="tile is-child notification is-white">
             <h3 className="title is-3 json-title">resources</h3>
             <JsonFieldTable json_in={json_in} />
