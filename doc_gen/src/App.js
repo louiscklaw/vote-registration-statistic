@@ -3,7 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 import Hero from './components/Hero'
 import Footer from './components/Footer'
-import all_api_manifest from './api_catalogue/all_api_manifest_99.json'
+import all_api_manifest from './api_catalogue/all_api_manifest_9.json'
 
 import ScrollToTop from './components/browser/ScrollToTop'
 

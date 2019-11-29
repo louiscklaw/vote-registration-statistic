@@ -12,7 +12,6 @@ export default (props) => {
         <div className="hero-body">
           <div className="container has-text-centered">
             <h1 className="title">香港統計數字一覽</h1>
-            <p>{props.location}</p>
             <p className="control has-icons-left">
               <input className="input is-rounded is-large" type="text" placeholder="Search" />
               <span className="icon is-small is-left">
