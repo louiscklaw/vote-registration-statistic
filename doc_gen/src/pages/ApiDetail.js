@@ -9,8 +9,11 @@ import './ApiDetail.css'
 import ApiDetailTest from '../all_api_manifest_9.json'
 
 import JsonGroups from '../components/Json/JsonGroups'
-import JsonResources from '../components/Json/JsonResources'
+import ApiResources from '../components/Api/ApiResources'
+
 import JsonOrganization from '../components/Json/JsonOrganization'
+
+import ApiRequestContainer from '../components/ApiRequest/ApiRequestContainer'
 
 export default () => {
   let {api_name} = useParams();
@@ -26,10 +29,16 @@ export default () => {
       <div className="container">
         <BackButton />
         <div className="app-detail">
+
+          <ApiResources json_res_in={resources} />
+
           <div className="tile is-ancestor">
             <JsonGroups json_group_in={groups} />
-            <JsonResources json_res_in={resources} />
             <JsonOrganization json_org_in={organization}/>
+          </div>
+
+          <div className="tile is-ancestor">
+            <ApiRequestContainer />
           </div>
 
           <div className="tile is-ancestor">

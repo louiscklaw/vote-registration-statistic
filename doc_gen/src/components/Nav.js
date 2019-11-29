@@ -2,6 +2,8 @@ import React from 'react';
 
 import TopMenu from './TopMenu'
 
+import './Nav.css'
+
 export default () => {
   return (
     <nav className="navbar">
@@ -9,7 +11,13 @@ export default () => {
         <div className="navbar-brand">
           <a className="navbar-item" href="../">
             {/* <img src="http://bulma.io/images/bulma-type-white.png" alt="Logo" /> */}
-            <h3 className="title is-3">LouisLabs</h3>
+            <h3 className="title is-3">
+              LouisLabs
+              <span style={{
+                fontSize: '0.5em',
+                paddingLeft: '10px'
+              }}>last update: xxxxxx</span>
+            </h3>
           </a>
           <span className="navbar-burger burger" data-target="navbarMenu">
             <span></span>
