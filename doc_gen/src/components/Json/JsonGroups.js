@@ -9,7 +9,7 @@ class JsonGroups extends Component{
     let {display_name, description, image_display_url, title, id, name} = this.props.json_group_in[0]
 
     return(
-        <div className="tile is-parent is-6 is-shady">
+        <div className="tile is-parent is-half is-shady">
           <article className="tile is-child notification is-white">
             <h3 className="title is-3 json-title">groups</h3>
             <JsonFieldTable json_in={this.props.json_group_in[0]} />

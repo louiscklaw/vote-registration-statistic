@@ -47,7 +47,7 @@ class ApiDetailCard extends Component {
         <div>
           <div className="text-details">
             {/* <p>{this.state.api_detail}</p> */}
-            <h3 className="is-6 title">{api_detail.resources[0].name}</h3>
+            <h3 className="is-half title">{api_detail.resources[0].name}</h3>
             <p>{api_detail.resources[0].description}</p>
 
             <p>{api_detail.maintainer}</p>

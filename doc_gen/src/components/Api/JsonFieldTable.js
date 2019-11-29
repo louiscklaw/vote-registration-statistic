@@ -12,13 +12,17 @@ class TableExample extends Component{
     return (<a href={link_in}>{link_in}</a>)
   }
 
+  translateBrFrText(text_in){
+    return text_in.replace(/\n/g,'<br />')
+  }
+
   renFieldValue(name_in, value_in){
     if (name_in.search('id') > -1){
       return (<td>{this.getCodeText(value_in)}</td>)
     }else if(value_in.search(/https|http/)>-1){
       return (<td>{this.getHrefLink(value_in)}</td>)
     }else{
-      return (<td>{value_in}</td>)
+      return (<td>{this.translateBrFrText(value_in)}</td>)
     }
   }
 

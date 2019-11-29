@@ -7,7 +7,7 @@ export default () => {
     <footer className="footer">
       <div className="container">
         <div className="columns">
-          <div className="column is-6">
+          <div className="column is-half">
             <h2><strong>2019年正式登記冊</strong></h2>
             <ul>
               <li>
@@ -20,7 +20,7 @@ export default () => {
               <li>Vestibulum errato isse</li>
             </ul>
           </div>
-          <div className="column is-6">
+          <div className="column is-half">
             <h2><strong>Credits</strong></h2>
             <ul>
               <li>

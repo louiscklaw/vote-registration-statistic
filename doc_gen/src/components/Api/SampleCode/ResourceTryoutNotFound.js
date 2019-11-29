@@ -10,7 +10,7 @@ import './JsonResourceTryout.css'
 
 const language='javascript'
 
-class XMLResourceTryout extends Component{
+class JsonResourceTryout extends Component{
   constructor(){
     super()
     this.state={
@@ -69,4 +69,4 @@ class XMLResourceTryout extends Component{
   }
 }
 
-export default XMLResourceTryout
+export default JsonResourceTryout

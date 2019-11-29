@@ -82,7 +82,7 @@ class CsvResourceTryout extends Component{
 
   render(){
     return (
-      <div className="tile is-parent is-6 is-shady">
+      <div className="tile is-parent is-half is-shady">
         <article className="tile is-child notification is-white">
           <h3 className="title is-3 json-title">tryout-csv</h3>
           <div className="content">

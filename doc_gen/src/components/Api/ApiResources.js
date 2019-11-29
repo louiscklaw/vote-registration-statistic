@@ -5,7 +5,7 @@ import ApiResource from './ApiResource'
 import JsonResourceTryout from '../Api/SampleCode/JsonResourceTryout'
 import CsvResourceTryout from '../Api/SampleCode/CsvResourceTryout'
 import XMLResourceTryout from '../Api/SampleCode/XMLResourceTryout'
-
+import ResourceTryoutNotFound from '../Api/SampleCode/ResourceTryoutNotFound'
 
 import './ApiResources.css'
 
@@ -32,9 +32,7 @@ class JsonResources extends Component {
         )
       default:
         return (
-          <pre>
-            {this.checkResourceFormat(json_in)}
-          </pre>
+          <ResourceTryoutNotFound json_res_in={json_in} />
         )
     }
   }
