@@ -1,0 +1,8 @@
+.json-title {
+  text-transform: uppercase;
+}
+
+.tile.notification {
+  justify-content: unset;
+  padding: 0px;
+}

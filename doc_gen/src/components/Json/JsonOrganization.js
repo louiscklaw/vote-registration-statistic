@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import JsonFieldTable from './JsonFieldTable'
+
 import './JsonOrganization.css'
 
 class JsonOrganization extends Component{
@@ -13,11 +15,7 @@ class JsonOrganization extends Component{
         <article className="tile is-child notification is-white">
           <h3 className="title is-3 json-title">organization</h3>
 
-          <h3 className="title is-6">{name}</h3>
-          <h3 className="title is-6">{title}</h3>
-          <h3 className="title is-6">{description}</h3>
-          <code>{id}</code>
-          <a >opendata@clp.com.hk</a>
+          <JsonFieldTable json_in={json_in}/>
         </article>
       </div>
     )

@@ -2,15 +2,15 @@ import React from 'react';
 
 import {useParams} from 'react-router-dom'
 
-import JsonRaw from '../components/JsonRaw'
+import JsonRaw from '../components/Json/JsonRaw'
 
-import BackButton from '../components/BackButton'
+import BackButton from '../components/Link/BackButton'
 import './ApiDetail.css'
 import ApiDetailTest from '../all_api_manifest_9.json'
 
-import JsonGroups from '../components/JsonGroups'
-import JsonResources from '../components/JsonResources'
-import JsonOrganization from '../components/JsonOrganization'
+import JsonGroups from '../components/Json/JsonGroups'
+import JsonResources from '../components/Json/JsonResources'
+import JsonOrganization from '../components/Json/JsonOrganization'
 
 export default () => {
   let {api_name} = useParams();

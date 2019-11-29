@@ -1,0 +1,23 @@
+import React, { Component } from 'react';
+
+import JsonFieldTable from './JsonFieldTable'
+
+import './JsonGroups.css'
+
+class JsonGroups extends Component{
+  render(){
+    let {display_name, description, image_display_url, title, id, name} = this.props.json_group_in[0]
+
+    return(
+        <div className="tile is-parent is-shady">
+          <article className="tile is-child notification is-white">
+            <h3 className="title is-3 json-title">groups</h3>
+            <JsonFieldTable json_in={this.props.json_group_in[0]} />
+            <code>{id}</code>
+          </article>
+        </div>
+    )
+  }
+}
+
+export default JsonGroups
