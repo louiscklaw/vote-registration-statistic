@@ -10,7 +10,6 @@ import {csv_api_call_sample} from './csv_api_call_sample'
 import "./CsvResourceTryout.css"
 
 const language='javascript'
-const content = 'var three = 1 + 2; // This is a comment'
 
 class CsvResourceTryout extends Component{
   constructor(){

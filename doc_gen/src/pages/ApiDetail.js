@@ -13,7 +13,7 @@ import ApiResources from '../components/Api/ApiResources'
 
 import JsonOrganization from '../components/Json/JsonOrganization'
 
-import ApiRequestContainer from '../components/ApiRequest/ApiRequestContainer'
+// import ApiRequestContainer from '../components/ApiRequest/ApiRequestContainer'
 import ApiDataDictionary from '../components/Api/ApiDataDictionary';
 
 export default ({api_catalogue}) => {

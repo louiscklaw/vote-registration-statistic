@@ -15,7 +15,7 @@ const test_json = {
   ]
 }
 
-const translateValue = (value) => value == ''? '-': value
+const translateValue = (value) => value === ''? '-': value
 
 const wrapTag = (tag_to_wrap, text) => `<${tag_to_wrap}>${text}</${tag_to_wrap}>`
 const getTr = (text) => wrapTag('tr', text)

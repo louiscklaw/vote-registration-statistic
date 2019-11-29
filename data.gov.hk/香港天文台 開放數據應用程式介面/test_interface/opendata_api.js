@@ -276,7 +276,7 @@ function genHtml( test_list ) {
     return `<div className="test_set">
     <div style="width: 100%;">
       <h3 className="subtitle is-3 has-text-link" style="text-decoration: underline;">${x[2]}</h3>
-      ${x[3] == undefined ? '' : getForm(x[3], x[4])}
+      ${x[3] === undefined ? '' : getForm(x[3], x[4])}
     </div>
     <div id="${getReqHtmlId(x[ 1 ])}"></div>
     <div id="${getResHtmlId(x[ 1 ])}"></div>

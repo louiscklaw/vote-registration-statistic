@@ -4,7 +4,7 @@ import Highlight from 'react-highlight.js'
 
 import {api_call_sample} from './api_call_sample'
 
-import {PrettyApiJsonResponse} from './common'
+// import {PrettyApiJsonResponse} from './common'
 
 import './JsonResourceTryout.css'
 

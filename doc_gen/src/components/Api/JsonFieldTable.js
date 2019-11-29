@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import './JsonFieldTable.css'
 
+const OrderOverride = ['name', 'description', 'url', 'keywords']
+
 class TableExample extends Component{
 
   getCodeText(code_in){
@@ -30,8 +32,8 @@ class TableExample extends Component{
     return(
       <tbody>
         {
-          Object.keys(json_in).map( k => {
-            if ( !([null,undefined].includes(json_in[k])) && json_in[k].toString().trim() != ''){
+          OrderOverride.map( k => {
+            if ( !([null,undefined].includes(json_in[k])) && json_in[k].toString().trim() !== ''){
               return (
                 <tr>
                   <th>{k}</th>
@@ -41,6 +43,23 @@ class TableExample extends Component{
             }else{
               return ''
             }
+          })
+        }
+        {
+          Object.keys(json_in).map( k => {
+            if (!(OrderOverride.includes(k))){
+              if ( !([null,undefined].includes(json_in[k])) && json_in[k].toString().trim() !== ''){
+              return (
+                <tr>
+                  <th>{k}</th>
+                  {this.renFieldValue(k, json_in[k].toString())}
+                </tr>
+                )
+            }else{
+              return ''
+            }
+            }
+
           })
         }
       </tbody>

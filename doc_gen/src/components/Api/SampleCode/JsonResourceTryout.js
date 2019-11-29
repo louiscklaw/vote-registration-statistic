@@ -8,11 +8,6 @@ import {PrettyApiJsonResponse} from './common'
 
 import './JsonResourceTryout.css'
 
-const language='javascript'
-const content = 'var three = 1 + 2; // This is a comment'
-
-
-
 class JsonResourceTryout extends Component{
   constructor(){
     super()
@@ -50,7 +45,7 @@ class JsonResourceTryout extends Component{
           <article className="tile is-child notification is-white">
             <h3 className="title is-3 json-title">tryout</h3>
             <div className="content">
-              <Highlight language={language}>
+              <Highlight language={'javascript'}>
                 {api_call_sample(this.props.json_res_in.url)}
               </Highlight>
             </div>

@@ -4,7 +4,7 @@ const SELECT_MONTH = _.range(1,12+1)
 const SELECT_DAY = _.range(1,31+1)
 const SELECT_HOUR = _.range(1,24+1)
 
-const translateValue = (value) => value == ''? '-': value
+const translateValue = (value) => value === ''? '-': value
 
 const wrapTag = (tag_to_wrap, text, class_in, id_in) => {
   // TODO: class_string not implemented

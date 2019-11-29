@@ -10,8 +10,6 @@ import TagList from './TagList'
 
 import './ApiListCard.css'
 
-// const test_url = 'assets/api_details/aahk-team1-flight-info.json'
-
 class ApiDetailCard extends Component {
   state = {
     api_detail: null,
@@ -23,19 +21,19 @@ class ApiDetailCard extends Component {
     let json_to_fetch = `assets/api_details/${package_to_check}.json`
     this.setState({isLoading: true})
 
-    fetch(json_to_fetch)
-      .then(res => res.json())
-      .then(res_json => {
-        let result = res_json.result
+    // fetch(json_to_fetch)
+    //   .then(res => res.json())
+    //   .then(res_json => {
+    //     let result = res_json.result
 
-        this.setState({
-          isLoading: false,
-          json_url: json_to_fetch,
+    //     this.setState({
+    //       isLoading: false,
+    //       json_url: json_to_fetch,
 
-          api_detail: res_json.result
-        })
-        console.log('maintainer', result.maintainer)
-      })
+    //       api_detail: res_json.result
+    //     })
+    //     console.log('maintainer', result.maintainer)
+    //   })
   }
 
   getApiDetail1(package_name) {
@@ -77,9 +75,11 @@ class ApiDetailCard extends Component {
 
     let set_group_names = new Set([
       ...groups.map(x => x.display_name),
-      ...groups.map(x => x.title)
+      ...groups.map(x => x.title),
+      ...resources.map(x => x.format)
     ])
-    let group_names = Array.from(set_group_names)
+
+    let group_names = Array.from([...set_group_names])
 
     return (
       <div className="api-detail">

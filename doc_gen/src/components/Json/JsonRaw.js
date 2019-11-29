@@ -30,7 +30,7 @@ class JsonRaw extends Component {
               <div className="json-raw" style={{textAlign:"left", width: '100%'}}>
 
                   {
-                    this.props.JsonContent == undefined ? this.renNoJsonProvided() : this.renJsonProvided(this.props.JsonContent)
+                    this.props.JsonContent === undefined ? this.renNoJsonProvided() : this.renJsonProvided(this.props.JsonContent)
                   }
 
               </div>

@@ -27,7 +27,7 @@ class TableExample extends Component{
       <tbody>
         {
           Object.keys(json_in).map( k => {
-            if ( !([null,undefined].includes(json_in[k])) && json_in[k].toString().trim() != ''){
+            if ( !([null,undefined].includes(json_in[k])) && json_in[k].toString().trim() !== ''){
               return (
                 <tr>
                   <th>{k}</th>
