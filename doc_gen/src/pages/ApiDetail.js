@@ -6,7 +6,7 @@ import JsonRaw from '../components/Json/JsonRaw'
 
 import BackButton from '../components/Link/BackButton'
 import './ApiDetail.css'
-import ApiDetailTest from '../all_api_manifest_9.json'
+// import ApiDetailTest from '../all_api_manifest_9.json'
 
 import JsonGroups from '../components/Json/JsonGroups'
 import ApiResources from '../components/Api/ApiResources'
@@ -16,7 +16,9 @@ import JsonOrganization from '../components/Json/JsonOrganization'
 import ApiRequestContainer from '../components/ApiRequest/ApiRequestContainer'
 import ApiDataDictionary from '../components/Api/ApiDataDictionary';
 
-export default () => {
+export default ({api_catalogue}) => {
+  let ApiDetailTest = api_catalogue
+
   let {api_name} = useParams();
 
   if (Object.keys(ApiDetailTest).includes(api_name)){

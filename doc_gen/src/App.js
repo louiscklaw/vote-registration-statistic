@@ -3,7 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 import Hero from './components/Hero'
 import Footer from './components/Footer'
-import all_api_manifest from './all_api_manifest_9.json'
+import all_api_manifest from './api_catalogue/all_api_manifest_99.json'
 
 import About from './pages/About'
 import ApiList from './pages/ApiList'
@@ -35,7 +35,7 @@ function App() {
           <Route path="/api_detail/:api_name">
             <Hero show_search_input={false} />
             <section className="section">
-              <ApiDetail />
+              <ApiDetail api_catalogue={all_api_manifest}/>
             </section>
           </Route>
 
