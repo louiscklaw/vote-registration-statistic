@@ -4,8 +4,12 @@ export const HELLO_ERROR = {
 }
 
 export const CORS_ERROR = `
-error found during fetching result,
+Error found during fetching result,
 possibility a CORS error.
 If it is a CSV file, try download it instead
 
 `.trim()
+
+export const REPORT_TO_ME = `
+error found and please kindly report to me.
+`

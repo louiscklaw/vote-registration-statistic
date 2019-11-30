@@ -18,7 +18,7 @@ exports.helloWorld = functions.https.onRequest( ( req, res ) => {
 
 } );
 
-exports.helloCSV = functions.https.onRequest( ( req, res ) => {
+exports.getCSV = functions.https.onRequest( ( req, res ) => {
   let csv_url_path = req.query.q
   fetch( csv_url_path)
     .then(res => res.text())

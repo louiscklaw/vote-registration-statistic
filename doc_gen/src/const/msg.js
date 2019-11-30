@@ -1,0 +1,1 @@
+export const IS_LOADING_TEXT = 'result is loading ...'

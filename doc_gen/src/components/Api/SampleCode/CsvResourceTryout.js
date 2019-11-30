@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Highlight from 'react-highlight.js'
 
 import {CORS_ERROR} from '../../../const/errors'
+import {IS_LOADING_TEXT} from '../../../const/msg'
 
 // import {PrettyApiJsonResponse} from './common'
 import {getCSVFrFirebase} from '../../../api_endpoint'
@@ -17,9 +18,10 @@ const language='javascript'
 class CsvResourceTryout extends Component{
   constructor(){
     super()
+
     this.state={
-      call_result: null,
-      isLoading: false,
+      call_result: IS_LOADING_TEXT,
+      isLoading: true,
       call_sample_src: null,
       error_found: false
     }
@@ -27,12 +29,6 @@ class CsvResourceTryout extends Component{
 
   testCall( url_in ) {
     let sample_code_src = csv_api_call_sample(url_in)
-
-    this.setState( {
-      isLoading: true,
-      call_result: 'rendering result...',
-      error_found: null
-    } )
 
     fetch(getCSVFrFirebase(url_in))
       .then( res => res.text())
@@ -46,8 +42,8 @@ class CsvResourceTryout extends Component{
       })
       .catch(
         this.setState({
+          ...this.state,
           isLoading:false,
-          call_result: CORS_ERROR,
           error_found: true
         })
       )
@@ -60,19 +56,29 @@ class CsvResourceTryout extends Component{
   }
 
   renResult(call_result_in){
-    if(this.state.error_found){
+    let {isLoading, error_found, call_result} = this.state
+    if (isLoading){
       return(
         <Highlight language={'plaintext'}>
-          {'error'+call_result_in}
+          {IS_LOADING_TEXT}
         </Highlight>
       )
     }else{
-      return(
-        <Highlight language={'csv'}>
-          {chopLongString(call_result_in,500)}
-        </Highlight>
-      )
+      if(error_found){
+        return(
+          <Highlight language={'plaintext'}>
+            {CORS_ERROR}
+          </Highlight>
+        )
+      }else{
+        return(
+          <Highlight language={'csv'}>
+            {chopLongString(call_result,500)}
+          </Highlight>
+        )
+      }
     }
+
   }
 
   render(){
@@ -81,7 +87,7 @@ class CsvResourceTryout extends Component{
         <article className="tile is-child notification is-white">
           <h3 className="title is-3 json-title">tryout-csv</h3>
           <div className="content">
-            {this.renResult(this.state.call_result)}
+            {this.renResult()}
           </div>
 
         </article>

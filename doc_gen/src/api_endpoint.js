@@ -14,7 +14,7 @@ function getEndPoint(func_name){
 }
 
 function getCSVFrFirebase(url_csv_path){
-  return getEndPoint('helloCSV')+'?q='+url_csv_path
+  return getEndPoint('getCSV')+'?q='+url_csv_path
 }
 
 
