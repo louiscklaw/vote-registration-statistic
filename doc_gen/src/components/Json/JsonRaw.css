@@ -9,3 +9,7 @@
 .json-raw-container {
   width: 100%;
 }
+
+.json-raw pre{
+  padding: 0px;
+}

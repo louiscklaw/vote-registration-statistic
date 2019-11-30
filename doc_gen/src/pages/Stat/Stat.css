@@ -1,3 +1,8 @@
 .stat-container{
   min-height: 50vh;
 }
+
+.stat-container p {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}

@@ -54,8 +54,14 @@ class Stat extends Component{
             <div className="tile is-child">
               <p>最後更新: </p>
               <LastUpdate />
+
               <p>主要格式統計: </p>
               <SampleTable table_in={this.getFormats()}/>
+
+              <p>主要 Tags 統計: </p>
+              <SampleTable table_in={this.getFormats()}/>
+
+              <p></p>
             </div>
           </div>
         </div>

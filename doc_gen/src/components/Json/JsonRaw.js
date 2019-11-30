@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 
+import {highlightJson} from '../../common'
+
 import './JsonRaw.css'
 
 class JsonRaw extends Component {
@@ -14,9 +16,7 @@ class JsonRaw extends Component {
 
   renJsonProvided(json_in){
     return(
-      <pre>
-        {JSON.stringify(json_in, null , 1)}
-      </pre>
+      JSON.stringify(json_in, null , 1)
     )
   }
 
@@ -28,11 +28,7 @@ class JsonRaw extends Component {
             <h3 className="title is-6">JSON RAW</h3>
             <div className="content">
               <div className="json-raw" style={{textAlign:"left", width: '100%'}}>
-
-                  {
-                    this.props.JsonContent === undefined ? this.renNoJsonProvided() : this.renJsonProvided(this.props.JsonContent)
-                  }
-
+                {highlightJson(this.renJsonProvided(this.props.JsonContent))}
               </div>
             </div>
           </article>
