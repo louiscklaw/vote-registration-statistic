@@ -19,7 +19,10 @@ class ApiDetailCard extends Component {
   componentDidMount(){
     let package_to_check = this.props.package_to_check
     let json_to_fetch = `assets/api_details/${package_to_check}.json`
-    this.setState({isLoading: true})
+    this.setState({
+      ...this.state,
+      isLoading: true
+    })
   }
 
   getApiDescription(){
@@ -40,11 +43,14 @@ class ApiDetailCard extends Component {
 
     let set_group_names = new Set([
       ...groups.map(x => x.display_name),
-      ...groups.map(x => x.title),
+      ...groups.map(x => x.title)
+    ])
+    let set_format_names = new Set([
       ...resources.map(x => x.format)
     ])
 
     let group_names = Array.from([...set_group_names])
+    let format_names = Array.from([...set_format_names])
 
     return (
       <div className="api-detail">
@@ -52,8 +58,15 @@ class ApiDetailCard extends Component {
           <p>{title}</p>
           <p>{this.getApiDescription()}</p>
 
-          <TagList tag_list={group_names}/>
-          <Link to={`api_detail/${package_name}`} >detail</Link>
+          <div className="horizontal-list">
+            T:<TagList tag_list={group_names}/>
+          </div>
+          <div className="horizontal-list">
+            F:<TagList tag_list={format_names}/>
+          </div>
+          <div>
+            <Link to={`api_detail/${package_name}`} >detail</Link>
+          </div>
         </Card>
       </div>
     )

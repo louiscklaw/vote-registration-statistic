@@ -6,3 +6,16 @@
 .api-detail .content {
   text-align: left;
 }
+
+.horizontal-list{
+  width: 100%;
+  display: inline-flex;
+  padding-top:2px;
+  padding-bottom: 1px;
+}
+
+.tag-list {
+  width: 100%;
+  display: inline-flex;
+
+}

@@ -33,7 +33,6 @@ class CsvResourceTryout extends Component{
       .then(res_text => {
         this.setState({
           ...this.state,
-
           isLoading: false,
           call_result: res_text,
           error_found: false

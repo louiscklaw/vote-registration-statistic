@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 import {connect} from 'react-redux'
-import {UPDATE_FILTER_TEXT} from '../reducers/ActionType'
 
-import ApiListCard from '../components/ApiListCard'
+import {UPDATE_FILTER_TEXT} from '../../reducers/ActionType'
+
+import ApiListCard from '../../components/ApiListCard'
 
 import './ApiList.css'
 
@@ -13,7 +14,11 @@ class ApiList extends Component{
   getCard(current_json, open_api){
     return (
       <li className="flex-item" key={open_api}>
-        <ApiListCard className="api-list-card" json_to_list={current_json} package_name={open_api} />
+        <ApiListCard
+          className="api-list-card"
+          json_to_list={current_json}
+          package_name={open_api}
+        />
       </li>
     )
   }
@@ -41,13 +46,12 @@ class ApiList extends Component{
     let all_api_list = this.props.all_api_list
     let filter = this.props.posts
 
-    let api_detail_cards = Object.keys(all_api_list)
+    let api_cards = Object.keys(all_api_list)
       .filter( k => { return this.filterUsingKeyword([filter], all_api_list[k]) })
       .map( open_api => {
-        let{groups, organization, resources} = all_api_list[open_api].result
+        // let{groups, organization, resources} = all_api_list[open_api].result
 
-        let single_json = all_api_list[open_api]
-        return this.getCard(single_json, open_api)
+        return this.getCard(all_api_list[open_api], open_api)
       })
       .sort()
 
@@ -55,7 +59,7 @@ class ApiList extends Component{
       <div className="container">
         <div>
           <ul className="flex-container wrap">
-            {api_detail_cards}
+            {api_cards}
           </ul>
         </div>
       </div>

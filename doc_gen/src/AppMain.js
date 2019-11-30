@@ -8,7 +8,7 @@ import ScrollToTop from './components/browser/ScrollToTop'
 import About from './pages/About/About'
 import Stat from './pages/Stat/Stat'
 
-import ApiList from './pages/ApiList'
+import ApiList from './pages/ApiList/ApiList'
 import ApiDetail from './pages/ApiDetail'
 
 import Hero from './components/Hero'
