@@ -49,17 +49,16 @@ class TableExample extends Component{
           Object.keys(json_in).map( k => {
             if (!(OrderOverride.includes(k))){
               if ( !([null,undefined].includes(json_in[k])) && json_in[k].toString().trim() !== ''){
-              return (
-                <tr>
-                  <th>{k}</th>
-                  {this.renFieldValue(k, json_in[k].toString())}
-                </tr>
-                )
-            }else{
-              return ''
+                return (
+                  <tr>
+                    <th>{k}</th>
+                    {this.renFieldValue(k, json_in[k].toString())}
+                  </tr>
+                  )
+              }else{
+                return ''
+              }
             }
-            }
-
           })
         }
       </tbody>

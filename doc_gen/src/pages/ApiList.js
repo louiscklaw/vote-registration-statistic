@@ -22,11 +22,6 @@ class ApiList extends Component{
   }
 
   filterUsingKeyword(keyword_string, json_in){
-    let {
-      result,
-      groups,
-      organization
-    } = json_in
     let found = false
     keyword_string
       .split(' ')
@@ -45,7 +40,7 @@ class ApiList extends Component{
     let api_detail_cards = Object.keys(all_api_list)
       .filter( k => { return this.filterUsingKeyword(filter_by_text, all_api_list[k]) })
       .map( open_api => {
-        let{groups, organization, resources} = all_api_list[open_api].result
+        // let{groups, organization, resources} = all_api_list[open_api].result
 
         let single_json = all_api_list[open_api]
         return this.getCard(single_json, open_api)

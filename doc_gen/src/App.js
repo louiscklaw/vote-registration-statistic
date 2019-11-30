@@ -1,6 +1,11 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import rootReducer from './reducers/rootReducer'
+
+
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import all_api_manifest from './api_catalogue/all_api_manifest_99.json'
@@ -10,10 +15,6 @@ import ScrollToTop from './components/browser/ScrollToTop'
 import About from './pages/About'
 import ApiList from './pages/ApiList'
 import ApiDetail from './pages/ApiDetail'
-
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import rootReducer from './reducers/rootReducer'
 
 import './App.css';
 
