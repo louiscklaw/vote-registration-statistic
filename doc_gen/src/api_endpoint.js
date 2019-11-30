@@ -13,12 +13,27 @@ function getEndPoint(func_name){
   }
 }
 
-function getCSVFrFirebase(url_csv_path){
-  return getEndPoint('getCSV')+'?q='+url_csv_path
+let format_testlink_mapper = {
+  csv: 'getCSV',
+  json: 'getJSON'
 }
 
+function getFirebaseTestLink(path_in, format_in){
+  return getEndPoint(format_testlink_mapper[format_in])+'?q='+path_in
+}
+
+function getCSVFrFirebase(url_csv_path){
+  // return getEndPoint('getCSV')+'?q='+url_csv_path
+  return getFirebaseTestLink(url_csv_path, 'csv')
+}
+
+function getJSONFirebaseTestLink(url_json_path){
+  // return getEndPoint('getJSON')+'?q='+url_json_path
+  return getFirebaseTestLink(url_json_path, 'json')
+}
 
 export {
   getEndPoint,
-  getCSVFrFirebase
+  getCSVFrFirebase,
+  getJSONFirebaseTestLink
 }

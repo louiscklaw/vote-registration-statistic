@@ -13,8 +13,6 @@ import {csv_api_call_sample} from './csv_api_call_sample'
 
 import "./CsvResourceTryout.css"
 
-const language='javascript'
-
 class CsvResourceTryout extends Component{
   constructor(){
     super()
@@ -35,6 +33,7 @@ class CsvResourceTryout extends Component{
       .then(res_text => {
         this.setState({
           ...this.state,
+
           isLoading: false,
           call_result: res_text,
           error_found: false

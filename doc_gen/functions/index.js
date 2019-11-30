@@ -32,3 +32,17 @@ exports.getCSV = functions.https.onRequest( ( req, res ) => {
       console.log( error );
     } );
 } )
+
+exports.getJSON = functions.https.onRequest( ( req, res ) => {
+  let csv_url_path = req.query.q
+  fetch( csv_url_path)
+    .then(res => res.text())
+    .then( res_text => {
+      return cors( req, res, () => {
+        res.status( 200 ).send( res_text );
+      } )
+    } )
+    .catch( error => {
+      console.log( error );
+    } );
+} )

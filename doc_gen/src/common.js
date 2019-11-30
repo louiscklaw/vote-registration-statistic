@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+import Highlight from 'react-highlight.js'
 
 function chopLongString(str_in, max_length=50){
 
@@ -23,8 +25,42 @@ function randomId(){
   return [Math.random().toString().slice(2,10)]
 }
 
+function highlightSomething(obj_in, format_use){
+  return(
+    <Highlight language={format_use}>
+      {obj_in}
+    </Highlight>
+  )
+}
+
+function highlightPlaintext(text_in){
+  return highlightSomething(text_in, 'plaintext')
+}
+
+function highlightJson(text_in){
+  return highlightSomething(text_in, 'json')
+}
+
+function highlightJavascript(text_in){
+  return highlightSomething(text_in, 'javascript')
+}
+
+function highlightErrorText(err_text_in, firebase_test_link){
+
+  return (
+    <div>
+      {highlightSomething(err_text_in, 'plaintext')}
+      <a href={firebase_test_link}>try fetching using firebase</a>
+    </div>
+  )
+}
+
 export {
   helloworld,
   chopLongString,
-  randomId
+  randomId,
+  highlightPlaintext,
+  highlightJson,
+  highlightJavascript,
+  highlightErrorText
 }
