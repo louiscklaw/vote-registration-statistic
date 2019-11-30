@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 import Tags from './Tags'
+import "./TagList.css"
 
 class TagList extends Component {
 
-  renTagList(tag_list_in){
-    return tag_list_in.map(x => {
+  renTagList(){
+    let tag_list = this.props.tag_list
+    return tag_list.map(x => {
       return(
         <Tags tag_text={x} key={x} />
       )
@@ -15,7 +17,7 @@ class TagList extends Component {
   render(){
     return (
     <div className="tags">
-      {this.renTagList(this.props.tag_list)}
+      {this.renTagList()}
     </div>
     )
   }
