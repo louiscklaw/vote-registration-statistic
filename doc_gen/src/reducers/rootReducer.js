@@ -1,8 +1,11 @@
 
 import {UPDATE_FILTER_TEXT} from './ActionType'
 
+import all_api_manifest from '../api_catalogue/all_api_manifest.json'
+
 const initState = {
-  posts: ''
+  posts: '',
+  api_dictionary: all_api_manifest
 }
 
 const rootReducer = ( state = initState, action ) => {

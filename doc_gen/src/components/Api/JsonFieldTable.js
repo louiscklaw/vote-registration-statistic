@@ -24,7 +24,7 @@ class TableExample extends Component{
     }else if(value_in.search(/https|http/)>-1){
       return (<td>{this.getHrefLink(value_in)}</td>)
     }else{
-      return (<td>{this.translateBrFrText(value_in)}111</td>)
+      return (<td>{this.translateBrFrText(value_in)}</td>)
     }
   }
 

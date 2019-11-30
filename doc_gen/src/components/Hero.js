@@ -14,7 +14,8 @@ class Hero extends Component{
   }
 
   getTotalApiCount(){
-    return 0
+    let api_found = Object.keys(this.props.api_dictionary).length
+    return api_found
   }
 
   showSearchInput(show_in) {
@@ -29,7 +30,7 @@ class Hero extends Component{
                 <i className="fas fa-binoculars"></i>
               </span>
             </p>
-            <p className="subtitle is-3 total-api-count">{this.getTotalApiCount()}</p>
+            <p className="subtitle is-3 total-api-count">{this.getTotalApiCount()} API found</p>
           </div>
         </div>
       )
@@ -56,7 +57,8 @@ class Hero extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.posts
+    posts: state.posts,
+    api_dictionary: state.api_dictionary
   }
 }
 

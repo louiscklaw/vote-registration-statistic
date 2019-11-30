@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {Switch, Route} from 'react-router-dom'
 
-import all_api_manifest from './api_catalogue/all_api_manifest.json'
+import {connect} from 'react-redux'
+
+// import all_api_manifest from './api_catalogue/all_api_manifest.json'
 
 import ScrollToTop from './components/browser/ScrollToTop'
 
@@ -12,7 +14,6 @@ import ApiDetail from './pages/ApiDetail'
 import Hero from './components/Hero'
 
 class AppMain extends Component{
-
   render(){
     return(
       <Switch>
@@ -21,7 +22,7 @@ class AppMain extends Component{
           <Hero show_search_input={true} />
           <section className="section">
 
-            <ApiList all_api_list={all_api_manifest} />
+            <ApiList all_api_list={this.props.all_api_manifest} />
           </section>
         </Route>
 
@@ -37,7 +38,7 @@ class AppMain extends Component{
           <ScrollToTop />
           <Hero show_search_input={false} />
           <section className="section">
-            <ApiDetail api_catalogue={all_api_manifest}/>
+            <ApiDetail api_catalogue={this.props.all_api_manifest}/>
           </section>
         </Route>
 
@@ -46,4 +47,10 @@ class AppMain extends Component{
   }
 }
 
-export default AppMain
+const mapStateToProps = (state) => {
+  return {
+    all_api_manifest: state.api_dictionary
+  }
+}
+
+export default connect(mapStateToProps)(AppMain)
