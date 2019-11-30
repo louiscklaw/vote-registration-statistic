@@ -4,7 +4,10 @@ import Highlight from 'react-highlight.js'
 
 import {CORS_ERROR} from '../../../const/errors'
 
-import {PrettyApiJsonResponse} from './common'
+// import {PrettyApiJsonResponse} from './common'
+import {getCSVFrFirebase} from '../../../api_endpoint'
+import {chopLongString} from '../../../common'
+
 import {csv_api_call_sample} from './csv_api_call_sample'
 
 import "./CsvResourceTryout.css"
@@ -22,40 +25,33 @@ class CsvResourceTryout extends Component{
     }
   }
 
-  testCall1(url_in){
-    this.setState({isLoading:true})
-    eval("fetch('https://istartup.hk/opendata/ccmf/ccmf.csv').then(res => res.text()).then(res_text => console.log(res_text))")
-    return fetch(url_in)
-    .then(res => res.text())
-    .then(res_json => {
-      this.setState({
-        isLoading: false,
-        call_result: res_json
-      })
-
-    })
-  }
-
   testCall( url_in ) {
     let sample_code_src = csv_api_call_sample(url_in)
+
     this.setState( {
       isLoading: true,
-      call_result: 'rendering result...'
+      call_result: 'rendering result...',
+      error_found: null
     } )
 
-    eval( sample_code_src )
-      .then(res_json => {
+    fetch(getCSVFrFirebase(url_in))
+      .then( res => res.text())
+      .then(res_text => {
         this.setState({
+          ...this.state,
           isLoading: false,
-          call_result: PrettyApiJsonResponse(res_json)
+          call_result: res_text,
+          error_found: false
         })
       })
       .catch(
         this.setState({
+          isLoading:false,
           call_result: CORS_ERROR,
           error_found: true
         })
       )
+
     }
 
   componentDidMount(){
@@ -67,13 +63,13 @@ class CsvResourceTryout extends Component{
     if(this.state.error_found){
       return(
         <Highlight language={'plaintext'}>
-          {call_result_in}
+          {'error'+call_result_in}
         </Highlight>
       )
     }else{
       return(
         <Highlight language={'csv'}>
-          {call_result_in}
+          {chopLongString(call_result_in,500)}
         </Highlight>
       )
     }
@@ -84,12 +80,6 @@ class CsvResourceTryout extends Component{
       <div className="tile is-parent is-half is-shady">
         <article className="tile is-child notification is-white">
           <h3 className="title is-3 json-title">tryout-csv</h3>
-          <div className="content">
-            <Highlight language={language}>
-              {csv_api_call_sample(this.props.json_res_in.url)}
-            </Highlight>
-          </div>
-
           <div className="content">
             {this.renResult(this.state.call_result)}
           </div>

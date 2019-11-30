@@ -1,9 +1,13 @@
 
 function chopLongString(str_in, max_length=50){
-  if (str_in.length > max_length){
-    return str_in.substring(0,max_length)+'...'
-  }else{
+  if (str_in === null ){
     return str_in
+  }else{
+    if (str_in.length > max_length){
+      return str_in.substring(0,max_length)+'...'
+    }else{
+      return str_in
+    }
   }
 }
 
