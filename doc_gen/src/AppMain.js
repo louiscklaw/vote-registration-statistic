@@ -3,11 +3,10 @@ import {Switch, Route} from 'react-router-dom'
 
 import {connect} from 'react-redux'
 
-// import all_api_manifest from './api_catalogue/all_api_manifest.json'
-
 import ScrollToTop from './components/browser/ScrollToTop'
 
 import About from './pages/About'
+import Stat from './pages/Stat/Stat'
 import ApiList from './pages/ApiList'
 import ApiDetail from './pages/ApiDetail'
 
@@ -23,6 +22,14 @@ class AppMain extends Component{
           <section className="section">
 
             <ApiList all_api_list={this.props.all_api_manifest} />
+          </section>
+        </Route>
+
+        <Route path="/stat">
+          <ScrollToTop />
+          <Hero show_search_input={false} />
+          <section className="section">
+            <Stat />
           </section>
         </Route>
 

@@ -39,12 +39,6 @@ export default () => {
                 </a>
               </span>
 
-              <ul>
-                <li>繁 / </li>
-                <li>簡 / </li>
-                <li>En</li>
-              </ul>
-
             </div>
           </div>
         </div>
