@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import {connect} from 'react-redux'
+
 import ApiListCard from '../components/ApiListCard'
 
 import './ApiList.css'
@@ -32,10 +34,10 @@ class ApiList extends Component{
 
   render(){
     let all_api_list = this.props.all_api_list
-
+    let filter = this.props.posts
 
     let api_detail_cards = Object.keys(all_api_list)
-      .filter( k => { return this.filterUsingKeyword(['數碼'], all_api_list[k]) })
+      .filter( k => { return this.filterUsingKeyword([filter], all_api_list[k]) })
       .map( open_api => {
         let{groups, organization, resources} = all_api_list[open_api].result
 
@@ -55,4 +57,10 @@ class ApiList extends Component{
   }
 }
 
-export default ApiList
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts
+  }
+}
+
+export default connect(mapStateToProps)(ApiList)
