@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import {randomId} from '../../common'
+
 import ApiResource from './ApiResource'
 
 import JsonResourceTryout from '../Api/SampleCode/JsonResourceTryout'
@@ -38,8 +40,9 @@ class JsonResources extends Component {
   }
 
   renJsonResource(json_in){
+
     return (
-      <div className="tile is-ancestor">
+      <div className="tile is-ancestor" key={randomId()}>
         <ApiResource json_res_in={json_in} />
         {this.renTestCall(json_in)}
       </div>

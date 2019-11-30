@@ -1,4 +1,8 @@
 
+.api-list-card{
+  transition: 1s;
+}
+
 .wrap    {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;

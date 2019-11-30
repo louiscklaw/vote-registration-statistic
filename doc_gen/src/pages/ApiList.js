@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {connect} from 'react-redux'
+import {UPDATE_FILTER_TEXT} from '../reducers/ActionType'
 
 import ApiListCard from '../components/ApiListCard'
 
@@ -12,7 +13,7 @@ class ApiList extends Component{
   getCard(current_json, open_api){
     return (
       <li className="flex-item" key={open_api}>
-        <ApiListCard json_to_list={current_json} package_name={open_api} />
+        <ApiListCard className="api-list-card" json_to_list={current_json} package_name={open_api} />
       </li>
     )
   }
@@ -32,6 +33,10 @@ class ApiList extends Component{
     return found
   }
 
+  componentDidMount(){
+    this.props.clear_filter_text()
+  }
+
   render(){
     let all_api_list = this.props.all_api_list
     let filter = this.props.posts
@@ -43,7 +48,8 @@ class ApiList extends Component{
 
         let single_json = all_api_list[open_api]
         return this.getCard(single_json, open_api)
-    })
+      })
+      .sort()
 
     return (
       <div className="container">
@@ -63,4 +69,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(ApiList)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    clear_filter_text: () => dispatch({type: UPDATE_FILTER_TEXT, text:''})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ApiList)

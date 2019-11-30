@@ -11,7 +11,12 @@ function helloworld(){
   console.log('helloworld from common.js')
 }
 
+function randomId(){
+  return [Math.random().toString().slice(2,10)]
+}
+
 export {
   helloworld,
-  chopLongString
+  chopLongString,
+  randomId
 }

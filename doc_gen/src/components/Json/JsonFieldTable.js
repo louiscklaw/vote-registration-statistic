@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import {randomId} from '../../common'
+
 import './JsonFieldTable.css'
 
 class TableExample extends Component{
@@ -29,7 +31,7 @@ class TableExample extends Component{
           Object.keys(json_in).map( k => {
             if ( !([null,undefined].includes(json_in[k])) && json_in[k].toString().trim() !== ''){
               return (
-                <tr>
+                <tr key={randomId()}>
                   <th>{k}</th>
                   {this.renFieldValue(k, json_in[k].toString())}
                 </tr>

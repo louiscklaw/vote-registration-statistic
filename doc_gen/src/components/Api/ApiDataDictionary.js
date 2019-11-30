@@ -65,7 +65,7 @@ class ApiDataDictionary extends Component{
         {
           Object.keys(json_in).map( k => {
             return (
-              <tr>
+              <tr　key={k}>
                 <th>{k}</th>
                 {this.renFieldValue(k, json_in[k].toString())}
               </tr>

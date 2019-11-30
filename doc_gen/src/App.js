@@ -3,7 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 import Hero from './components/Hero'
 import Footer from './components/Footer'
-import all_api_manifest from './api_catalogue/all_api_manifest_99.json'
+import all_api_manifest from './api_catalogue/all_api_manifest.json'
 
 import ScrollToTop from './components/browser/ScrollToTop'
 
@@ -25,7 +25,6 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Switch>
-
             <Route exact path="/">
               <ScrollToTop />
               <Hero show_search_input={true} />

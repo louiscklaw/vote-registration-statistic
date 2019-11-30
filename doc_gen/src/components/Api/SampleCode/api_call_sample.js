@@ -16,6 +16,11 @@ fetch("${url}")
 
 export const api_call_sample = (url) => {
   return `
+
+// if you working with nodejs, i prefer "node-fetch"
+// yarn init -y && yarn add node-fetch
+// const fetch = require('node-fetch')
+
 fetch('${url}')
   .then(res => res.json())
 `.trim()

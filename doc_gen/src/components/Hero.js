@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {connect} from 'react-redux'
+import {UPDATE_FILTER_TEXT} from '../reducers/ActionType'
 
 import Nav from './Nav'
 
@@ -10,6 +11,10 @@ class Hero extends Component{
 
   handleOnChange(e){
     this.props.update_text(e.target.value)
+  }
+
+  getTotalApiCount(){
+    return 0
   }
 
   showSearchInput(show_in) {
@@ -24,7 +29,7 @@ class Hero extends Component{
                 <i className="fas fa-binoculars"></i>
               </span>
             </p>
-
+            <p className="subtitle is-3 total-api-count">{this.getTotalApiCount()}</p>
           </div>
         </div>
       )
@@ -57,7 +62,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch)  =>{
   return {
-    update_text: (text) => {dispatch({type: 'update_text', text})}
+    update_text: (text) => {
+      dispatch({type: UPDATE_FILTER_TEXT, text})
+    }
   }
 }
 

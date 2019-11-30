@@ -24,7 +24,7 @@ class TableExample extends Component{
     }else if(value_in.search(/https|http/)>-1){
       return (<td>{this.getHrefLink(value_in)}</td>)
     }else{
-      return (<td>{this.translateBrFrText(value_in)}</td>)
+      return (<td>{this.translateBrFrText(value_in)}111</td>)
     }
   }
 
@@ -35,7 +35,7 @@ class TableExample extends Component{
           OrderOverride.map( k => {
             if ( !([null,undefined].includes(json_in[k])) && json_in[k].toString().trim() !== ''){
               return (
-                <tr>
+                <tr key={k}>
                   <th>{k}</th>
                   {this.renFieldValue(k, json_in[k].toString())}
                 </tr>
@@ -50,7 +50,7 @@ class TableExample extends Component{
             if (!(OrderOverride.includes(k))){
               if ( !([null,undefined].includes(json_in[k])) && json_in[k].toString().trim() !== ''){
               return (
-                <tr>
+                <tr key={k}>
                   <th>{k}</th>
                   {this.renFieldValue(k, json_in[k].toString())}
                 </tr>
