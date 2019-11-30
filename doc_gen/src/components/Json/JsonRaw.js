@@ -25,7 +25,7 @@ class JsonRaw extends Component {
       <div className="json-raw-container">
         <div className="tile is-parent is-full is-shady">
           <article className="tile is-child is-white">
-            <h3 className="title is-3">JSON RAW</h3>
+            <h3 className="title is-6">JSON RAW</h3>
             <div className="content">
               <div className="json-raw" style={{textAlign:"left", width: '100%'}}>
 

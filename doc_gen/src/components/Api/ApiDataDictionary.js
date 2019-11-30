@@ -97,7 +97,7 @@ class ApiDataDictionary extends Component{
     return(
       <div className="tile is-parent is-full is-shady">
         <article className="tile is-child notification is-white">
-          <h3 className="title is-full json-title">Api documentation</h3>
+          <h6 className="title is-full is-6 json-title">Api documentation</h6>
           { this.renTable(this.props.result_in) }
         </article>
       </div>

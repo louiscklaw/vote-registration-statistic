@@ -1,0 +1,125 @@
+[debug] [2019-11-30T11:29:09.284Z] ----------------------------------------------------------------------
+[debug] [2019-11-30T11:29:09.286Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-11-30T11:29:09.286Z] CLI Version:   7.6.1
+[debug] [2019-11-30T11:29:09.286Z] Platform:      linux
+[debug] [2019-11-30T11:29:09.286Z] Node Version:  v8.16.2
+[debug] [2019-11-30T11:29:09.286Z] Time:          Sat Nov 30 2019 19:29:09 GMT+0800 (HKT)
+[debug] [2019-11-30T11:29:09.286Z] ----------------------------------------------------------------------
+[debug] [2019-11-30T11:29:09.286Z] 
+[debug] [2019-11-30T11:29:09.293Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-30T11:29:09.293Z] > authorizing via signed-in user
+[debug] [2019-11-30T11:29:09.293Z] [iam] checking project data-gov-hk-tryout for permissions ["firebase.projects.get"]
+[debug] [2019-11-30T11:29:09.294Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-11-30T11:29:09.295Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-11-30T11:29:09.422Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-30T11:29:09.428Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/data-gov-hk-tryout:testIamPermissions  
+
+[debug] [2019-11-30T11:29:09.654Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-30T11:29:09.657Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/data-gov-hk-tryout  
+ 
+[debug] [2019-11-30T11:29:10.303Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/logic/_workspace/vote-registration-statistic/doc_gen'...
+[info] 
+[info] ✔  functions: Using node@8 from host.
+[info] ✔  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "/home/logic/_workspace/vote-registration-statistic/doc_gen/functions" for Cloud Functions...
+[debug] [2019-11-30T11:29:10.873Z] [runtime-status] Functions runtime initialized. {"cwd":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions","node_version":"8.16.2"}
+[debug] [2019-11-30T11:29:10.873Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-30T11:29:10.876Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-30T11:29:10.878Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:29:10.880Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[info] ✔  functions[helloWorld]: http function initialized (http://localhost:5000/data-gov-hk-tryout/us-central1/helloWorld).
+[info] ✔  functions[getCSV]: http function initialized (http://localhost:5000/data-gov-hk-tryout/us-central1/getCSV).
+[info] ✔  functions[getJSON]: http function initialized (http://localhost:5000/data-gov-hk-tryout/us-central1/getJSON).
+[debug] [2019-11-30T11:29:34.858Z] Accepted request GET /data-gov-hk-tryout/us-central1/getCSV?q=https://istartup.hk/opendata/casp/casp.csv --> getCSV
+[debug] [2019-11-30T11:29:35.118Z] [runtime-status] Functions runtime initialized. {"cwd":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions","node_version":"8.16.2"}
+[info] i  functions: Beginning execution of "getCSV"
+[debug] [2019-11-30T11:29:35.120Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-30T11:29:35.124Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-30T11:29:35.125Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:29:35.126Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:29:35.175Z] [runtime-status] Trigger "getCSV" has been found, beginning invocation! {}
+[debug] [2019-11-30T11:29:35.176Z] [runtime-status]  {"httpsTrigger":{},"name":"getCSV","entryPoint":"getCSV"}
+[debug] [2019-11-30T11:29:35.176Z] [runtime-status] Running getCSV in mode HTTPS {}
+[debug] [2019-11-30T11:29:35.186Z] {"socketPath":"/tmp/firebase_emulator_invocation_9762.sock"}
+[debug] [2019-11-30T11:29:35.187Z] [functions] Runtime ready! Sending request! {"socketPath":"/tmp/firebase_emulator_invocation_9762.sock"}
+[debug] [2019-11-30T11:29:35.194Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-30T11:29:35.212Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "getCSV" in ~1s
+[debug] [2019-11-30T11:30:15.945Z] Accepted request GET /data-gov-hk-tryout/us-central1/getCSV?q=https://istartup.hk/opendata/casp/casp.csv --> getCSV
+[debug] [2019-11-30T11:30:16.296Z] [runtime-status] Functions runtime initialized. {"cwd":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions","node_version":"8.16.2"}
+[info] i  functions: Beginning execution of "getCSV"
+[debug] [2019-11-30T11:30:16.297Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-30T11:30:16.300Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-30T11:30:16.301Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:30:16.302Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:30:16.348Z] [runtime-status] Trigger "getCSV" has been found, beginning invocation! {}
+[debug] [2019-11-30T11:30:16.348Z] [runtime-status]  {"httpsTrigger":{},"name":"getCSV","entryPoint":"getCSV"}
+[debug] [2019-11-30T11:30:16.348Z] [runtime-status] Running getCSV in mode HTTPS {}
+[debug] [2019-11-30T11:30:16.358Z] {"socketPath":"/tmp/firebase_emulator_invocation_9867.sock"}
+[debug] [2019-11-30T11:30:16.358Z] [functions] Runtime ready! Sending request! {"socketPath":"/tmp/firebase_emulator_invocation_9867.sock"}
+[debug] [2019-11-30T11:30:16.365Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-30T11:30:16.379Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "getCSV" in ~1s
+[debug] [2019-11-30T11:30:37.939Z] Accepted request GET /data-gov-hk-tryout/us-central1/getCSV?q=https://istartup.hk/opendata/casp/casp.csv --> getCSV
+[debug] [2019-11-30T11:30:38.321Z] [runtime-status] Functions runtime initialized. {"cwd":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions","node_version":"8.16.2"}
+[info] i  functions: Beginning execution of "getCSV"
+[debug] [2019-11-30T11:30:38.322Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-30T11:30:38.325Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-30T11:30:38.326Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:30:38.326Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:30:38.368Z] [runtime-status] Trigger "getCSV" has been found, beginning invocation! {}
+[debug] [2019-11-30T11:30:38.368Z] [runtime-status]  {"httpsTrigger":{},"name":"getCSV","entryPoint":"getCSV"}
+[debug] [2019-11-30T11:30:38.368Z] [runtime-status] Running getCSV in mode HTTPS {}
+[debug] [2019-11-30T11:30:38.376Z] {"socketPath":"/tmp/firebase_emulator_invocation_9973.sock"}
+[debug] [2019-11-30T11:30:38.376Z] [functions] Runtime ready! Sending request! {"socketPath":"/tmp/firebase_emulator_invocation_9973.sock"}
+[debug] [2019-11-30T11:30:38.382Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-30T11:30:38.396Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "getCSV" in ~1s
+[debug] [2019-11-30T11:30:56.189Z] Accepted request GET /data-gov-hk-tryout/us-central1/getCSV?q=https://istartup.hk/opendata/casp/casp.csv --> getCSV
+[debug] [2019-11-30T11:30:56.595Z] [runtime-status] Functions runtime initialized. {"cwd":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions","node_version":"8.16.2"}
+[info] i  functions: Beginning execution of "getCSV"
+[debug] [2019-11-30T11:30:56.596Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-30T11:30:56.600Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-30T11:30:56.601Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:30:56.602Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:30:56.650Z] [runtime-status] Trigger "getCSV" has been found, beginning invocation! {}
+[debug] [2019-11-30T11:30:56.651Z] [runtime-status]  {"httpsTrigger":{},"name":"getCSV","entryPoint":"getCSV"}
+[debug] [2019-11-30T11:30:56.651Z] [runtime-status] Running getCSV in mode HTTPS {}
+[debug] [2019-11-30T11:30:56.660Z] {"socketPath":"/tmp/firebase_emulator_invocation_10097.sock"}
+[debug] [2019-11-30T11:30:56.661Z] [functions] Runtime ready! Sending request! {"socketPath":"/tmp/firebase_emulator_invocation_10097.sock"}
+[debug] [2019-11-30T11:30:56.668Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-30T11:30:56.683Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "getCSV" in ~1s
+[debug] [2019-11-30T11:31:03.874Z] Accepted request GET /data-gov-hk-tryout/us-central1/getCSV?q=https://istartup.hk/opendata/casp/casp.csv --> getCSV
+[debug] [2019-11-30T11:31:04.326Z] [runtime-status] Functions runtime initialized. {"cwd":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions","node_version":"8.16.2"}
+[info] i  functions: Beginning execution of "getCSV"
+[debug] [2019-11-30T11:31:04.327Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-30T11:31:04.330Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-30T11:31:04.330Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:31:04.331Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:31:04.388Z] [runtime-status] Trigger "getCSV" has been found, beginning invocation! {}
+[debug] [2019-11-30T11:31:04.388Z] [runtime-status]  {"httpsTrigger":{},"name":"getCSV","entryPoint":"getCSV"}
+[debug] [2019-11-30T11:31:04.388Z] [runtime-status] Running getCSV in mode HTTPS {}
+[debug] [2019-11-30T11:31:04.394Z] {"socketPath":"/tmp/firebase_emulator_invocation_10200.sock"}
+[debug] [2019-11-30T11:31:04.394Z] [functions] Runtime ready! Sending request! {"socketPath":"/tmp/firebase_emulator_invocation_10200.sock"}
+[debug] [2019-11-30T11:31:04.400Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-30T11:31:04.416Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "getCSV" in ~1s
+[debug] [2019-11-30T11:31:12.340Z] Accepted request GET /data-gov-hk-tryout/us-central1/getCSV?q=https://istartup.hk/opendata/casp/casp.csv --> getCSV
+[debug] [2019-11-30T11:31:12.678Z] [runtime-status] Functions runtime initialized. {"cwd":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions","node_version":"8.16.2"}
+[info] i  functions: Beginning execution of "getCSV"
+[debug] [2019-11-30T11:31:12.679Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-30T11:31:12.682Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-30T11:31:12.684Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:31:12.684Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/logic/_workspace/vote-registration-statistic/doc_gen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-30T11:31:12.732Z] [runtime-status] Trigger "getCSV" has been found, beginning invocation! {}
+[debug] [2019-11-30T11:31:12.732Z] [runtime-status]  {"httpsTrigger":{},"name":"getCSV","entryPoint":"getCSV"}
+[debug] [2019-11-30T11:31:12.732Z] [runtime-status] Running getCSV in mode HTTPS {}
+[debug] [2019-11-30T11:31:12.740Z] {"socketPath":"/tmp/firebase_emulator_invocation_10262.sock"}
+[debug] [2019-11-30T11:31:12.740Z] [functions] Runtime ready! Sending request! {"socketPath":"/tmp/firebase_emulator_invocation_10262.sock"}
+[debug] [2019-11-30T11:31:12.746Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-30T11:31:12.760Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "getCSV" in ~1s
