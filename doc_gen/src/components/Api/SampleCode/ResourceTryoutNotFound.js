@@ -4,7 +4,7 @@ import Highlight from 'react-highlight.js'
 
 import {api_call_sample} from './api_call_sample'
 
-import {PrettyApiJsonResponse} from './common'
+// import {PrettyApiJsonResponse} from './common'
 
 import './JsonResourceTryout.css'
 
@@ -51,14 +51,8 @@ class JsonResourceTryout extends Component{
           <article className="tile is-child notification is-white">
             <h3 className="title is-3 json-title">tryout</h3>
             <div className="content">
-              <Highlight language={language}>
-                {api_call_sample(this.props.json_res_in.url)}
-              </Highlight>
-            </div>
-
-            <div className="content">
               <Highlight language={'plaintext'}>
-                {'resource tryout not found'}
+                {'Resource tryout not supported'}
               </Highlight>
 
             </div>

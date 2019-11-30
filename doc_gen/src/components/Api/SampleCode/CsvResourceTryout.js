@@ -85,7 +85,7 @@ class CsvResourceTryout extends Component{
     return (
       <div className="tile is-parent is-half is-shady">
         <article className="tile is-child notification is-white">
-          <h3 className="title is-3 json-title">tryout-csv</h3>
+          <h3 className="subtitle is-6 json-title">tryout</h3>
           <div className="content">
             {this.renResult()}
           </div>
