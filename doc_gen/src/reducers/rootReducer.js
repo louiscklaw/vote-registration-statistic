@@ -1,13 +1,15 @@
 
+import {UPDATE_FILTER_TEXT} from './const'
+
 const initState = {
-  posts: ''
+  filter_by_text: ''
 }
 
 const rootReducer = ( state = initState, action ) => {
-  if (action.type=="update_text"){
+  if ( action.type === UPDATE_FILTER_TEXT ) {
     return {
       ...state,
-      posts: action.text
+      filter_by_text: action.text
     }
   }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
 import {connect} from 'react-redux'
+
+import {UPDATE_FILTER_TEXT} from '../reducers/const'
 
 import Nav from './Nav'
 
@@ -38,6 +39,7 @@ class Hero extends Component{
     }
   }
   render(){
+    console.log(UPDATE_FILTER_TEXT)
     return (
       <section className="hero is-info is-medium is-bold">
         <div className="hero-head">
@@ -57,7 +59,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch)  =>{
   return {
-    update_text: (text) => {dispatch({type: 'update_text', text})}
+    update_text: (text) => {dispatch({type: UPDATE_FILTER_TEXT, text})}
   }
 }
 

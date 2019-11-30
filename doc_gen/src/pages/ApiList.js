@@ -21,23 +21,29 @@ class ApiList extends Component{
     return JSON.stringify(json_in).search(text_to_search)
   }
 
-  filterUsingKeyword(keywords, json_in){
-    let {result, groups, organization} = json_in
+  filterUsingKeyword(keyword_string, json_in){
+    let {
+      result,
+      groups,
+      organization
+    } = json_in
     let found = false
-    keywords.forEach( kword => {
-      if (this.plaintextSearch(json_in, kword)> -1){
-        found=true
-      }
-    })
+    keyword_string
+      .split(' ')
+      .forEach( kword => {
+        if ( this.plaintextSearch( json_in, kword ) > -1 ) {
+          found = true
+        }
+      } )
     return found
   }
 
   render(){
     let all_api_list = this.props.all_api_list
-    let filter = this.props.posts
+    let filter_by_text = this.props.filter_by_text
 
     let api_detail_cards = Object.keys(all_api_list)
-      .filter( k => { return this.filterUsingKeyword([filter], all_api_list[k]) })
+      .filter( k => { return this.filterUsingKeyword(filter_by_text, all_api_list[k]) })
       .map( open_api => {
         let{groups, organization, resources} = all_api_list[open_api].result
 
@@ -59,7 +65,7 @@ class ApiList extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.posts
+    filter_by_text: state.filter_by_text
   }
 }
 

@@ -1,0 +1,6 @@
+
+const UPDATE_FILTER_TEXT = 'UPDATE_FILTER_TEXT'
+
+export {
+  UPDATE_FILTER_TEXT,
+}
