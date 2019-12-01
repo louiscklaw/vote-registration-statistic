@@ -2,6 +2,8 @@ import React from 'react';
 
 import FooterLink from './FooterLink'
 
+import './Footer.css'
+
 export default () => {
   return (
     <footer className="footer">
@@ -40,14 +42,30 @@ export default () => {
             </ul>
           </div>
         </div>
-        <div className="content has-text-centered">
+        <div className="columns">
+          <div className="column is-full">
+          <div className="content has-text-centered">
           <p>
-            <a className="icon" href="https://louiscklaw.github.io">louiscklaw.github.io</a>
+
+            <a href="https://louiscklaw.github.io">louiscklaw.github.io</a>
           </p>
-          <div className="control level-item">
-            <ul style={{display: "inline"}}>
-              <li>facebook ?</li>
-              <li>linkedin ?</li>
+          <div className="control level-item social-links">
+            <ul >
+              <li>
+                <i className="fab fa-facebook-square fa-2x "></i>
+              </li>
+              <li>
+                <i className="fa-2x fab fa-linkedin"></i>
+              </li>
+              <li>
+                <i class="fa-2x fab fa-slack"></i>
+              </li>
+              <li>
+              <i class="fab fa-github-square fa-2x"></i>
+              </li>
+              <li>
+                <i className="fab fa-telegram fa-2x "></i>
+              </li>
             </ul>
 
           </div>
@@ -59,6 +77,8 @@ export default () => {
               </div>
             </a>
           </div> */}
+        </div>
+          </div>
         </div>
       </div>
     </footer>
