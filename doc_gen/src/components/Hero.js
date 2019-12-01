@@ -12,22 +12,31 @@ import Nav from './Nav'
 import './Hero.css'
 
 class Hero extends Component{
-
-  handleUserInputFilterText(e){
-    let user_input = e.target.value
-
-    if (e.target.value.length > 0 ){
-      this.props.updateIsSearching(true)
-    }else{
-      this.props.updateIsSearching(false)
+  constructor(){
+    super()
+    this.state={
+      searchbox_text:''
     }
+  }
+
+
+  handleUserInputFilterText(user_input){
+    // if (user_input.length > 0 ){
+    //   this.props.updateIsSearching(true)
+    // }else{
+    //   this.props.updateIsSearching(false)
+    // }
 
     return user_input.split(' ')
       .filter( x => x.trim() != '')
   }
 
   handleOnChange(e){
-    this.props.update_text(this.handleUserInputFilterText(e))
+    this.props.updateSearchFilter(this.handleUserInputFilterText(e.target.value))
+    this.setState({
+      ...this.state,
+      searchbox_text: e.target.value
+    })
   }
 
   getTotalApiCount(){
@@ -47,9 +56,16 @@ class Hero extends Component{
   }
 
   componentDidMount(){
-    let match = this.props.match
-    console.log('helloworld')
-    console.log(match.params.filter_by_tags)
+    if (Object.keys(this.props.match.params).includes('filter_by_tags')){
+      this.setState({
+        ...this.state,
+        searchbox_text: this.props.match.params.filter_by_tags
+      })
+      this.props.updateSearchFilter("房屋")
+
+    }else{
+
+    }
 
   }
 
@@ -60,7 +76,7 @@ class Hero extends Component{
           <div className="container has-text-centered">
             <h1 className="title">香港統計數字一覽</h1>
             <p className="control has-icons-left">
-              <input className="input is-rounded is-large" type="text" placeholder="Search" onChange={(e)=>{this.handleOnChange(e)}} />
+              <input className="input is-rounded is-large" type="text" placeholder="Search" onChange={(e)=>{this.handleOnChange(e)}} value={this.state.searchbox_text} />
               <span className="icon is-small is-left">
                 <i className="fas fa-binoculars"></i>
               </span>
@@ -104,12 +120,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch)  =>{
   return {
-    update_text: (text) => {
+    updateSearchFilter: (text) => {
+      console.log('udpateSearchFilter...', text)
       dispatch({type: UPDATE_FILTER_TEXT, text})
     },
-    updateIsSearching: (is_searching) => {
-      dispatch({type: UPDATE_IS_SEARCHING, is_searching})
-    }
+    // updateIsSearching: (is_searching) => {
+    //   dispatch({type: UPDATE_IS_SEARCHING, is_searching})
+    // }
   }
 }
 

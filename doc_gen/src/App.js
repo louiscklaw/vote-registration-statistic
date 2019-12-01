@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom'
 
-import Footer from './components/Footer'
+import Footer from './components/Footer/Footer'
 
 import AppMain from './AppMain'
 

@@ -16,15 +16,19 @@ const initState = {
 }
 
 const updateIsSearching = (state, action) => {
+  let is_searching = state.filters.length > 0
+  console.log('updateIsSearching', is_searching)
   return {
     ...state,
-    isSearching: action.is_searching
+    isSearching: is_searching
   }
+
 }
 
 const rootReducer = ( state = initState, action ) => {
   switch (action.type) {
     case UPDATE_FILTER_TEXT:
+      updateIsSearching(state, action)
       return {
         ...state,
         posts: action.text,
