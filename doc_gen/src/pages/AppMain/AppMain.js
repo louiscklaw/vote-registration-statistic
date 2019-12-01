@@ -3,15 +3,16 @@ import {Switch, Route} from 'react-router-dom'
 
 import {connect} from 'react-redux'
 
-import ScrollToTop from './components/browser/ScrollToTop'
+import ScrollToTop from '../../components/browser/ScrollToTop'
+import Hero from '../../components/Hero'
 
-import About from './pages/About/About'
-import Stat from './pages/Stat/Stat'
+import About from '../About/About'
+import Stat from '../Stat/Stat'
+import TestPage from '../TestPage/TestPage'
 
-import ApiList from './pages/ApiList/ApiList'
-import ApiDetail from './pages/ApiDetail'
+import ApiList from '../ApiList/ApiList'
+import ApiDetail from '../ApiDetail'
 
-import Hero from './components/Hero'
 
 class AppMain extends Component{
   render(){
@@ -42,6 +43,14 @@ class AppMain extends Component{
           </section>
         </Route>
 
+        <Route path="/testpage">
+          <ScrollToTop />
+          <Hero show_search_input={false} />
+          <section className="section">
+            <TestPage />
+          </section>
+        </Route>
+
         <Route path="/api_detail/:api_name">
           <ScrollToTop />
           <Hero show_search_input={false} />
@@ -53,9 +62,11 @@ class AppMain extends Component{
         <Route path="/by_tags/:filter_by_tags">
           <ScrollToTop />
           <Hero show_search_input={true} />
-          <section className="section">
-            <ApiList all_api_list={this.props.all_api_manifest} />
-          </section>
+          <div className="app-main">
+            <section className="section">
+              <ApiList all_api_list={this.props.all_api_manifest} />
+            </section>
+          </div>
         </Route>
 
       </Switch>
