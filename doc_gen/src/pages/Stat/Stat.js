@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import SampleTable from './SampleTable'
-import { JsonToTable } from "react-json-to-table";
+// import { JsonToTable } from "react-json-to-table";
 
 import {connect} from 'react-redux'
 

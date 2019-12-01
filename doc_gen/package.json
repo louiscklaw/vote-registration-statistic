@@ -16,7 +16,8 @@
     "test": "react-scripts test",
     "postbuild": "react-snap",
     "eject": "react-scripts eject",
-    "build_w": "nodemon -w src --ext '*' --exec 'yarn build'"
+    "build_w": "nodemon -w src --ext '*' --exec 'yarn build'",
+    "test_w": "nodemon -w src --ext '*' --exec 'yarn test'"
   },
   "eslintConfig": {
     "extends": "react-app"
