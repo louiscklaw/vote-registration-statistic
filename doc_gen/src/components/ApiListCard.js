@@ -59,15 +59,15 @@ class ApiDetailCard extends Component {
           <p>{this.getApiDescription()}</p>
 
           <div className="horizontal-list">
-            <i class="fas fa-tags"></i>
+            <i className="fas fa-tags"></i>
             <TagList tag_list={group_names}/>
           </div>
           <div className="horizontal-list">
-            <i class="fas fa-save"></i>
+            <i className="fas fa-save"></i>
             <TagList tag_list={format_names}/>
           </div>
           <div className="detail-link-list">
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
             <Link to={`api_detail/${package_name}`} className="detail-link">詳細資料</Link>
           </div>
         </Card>
