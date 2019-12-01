@@ -1,3 +1,10 @@
+.social-links a{
+  color: #363636;
+}
+.social-links a:link{
+  text-decoration: none;
+
+}
 
 .social-links ul li {
   margin-top: 0px;

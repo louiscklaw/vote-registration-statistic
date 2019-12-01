@@ -2,6 +2,8 @@ import React from 'react';
 
 import FooterLink from './FooterLink'
 
+import FaLink from './Link/FaLink'
+
 import './Footer.css'
 
 export default () => {
@@ -46,25 +48,24 @@ export default () => {
           <div className="column is-full">
           <div className="content has-text-centered">
           <p>
-
             <a href="https://louiscklaw.github.io">louiscklaw.github.io</a>
           </p>
           <div className="control level-item social-links">
             <ul >
               <li>
-                <i className="fab fa-facebook-square fa-2x "></i>
+                <FaLink href_in="//www.facebook.com/louiscklaw" fa_class_in="fab fa-facebook-square fa-2x" />
               </li>
               <li>
-                <i className="fa-2x fab fa-linkedin"></i>
+                <FaLink href_in="//www.linkedin.com/in/louiscklaw" fa_class_in="fa-2x fab fa-linkedin" />
               </li>
               <li>
-                <i class="fa-2x fab fa-slack"></i>
+                <FaLink href_in="//louislabs.slack.com" fa_class_in="fa-2x fab fa-slack" />
               </li>
               <li>
-              <i class="fab fa-github-square fa-2x"></i>
+                <FaLink href_in="//github.com/louiscklaw" fa_class_in="fab fa-github-square fa-2x" />
               </li>
               <li>
-                <i className="fab fa-telegram fa-2x "></i>
+                <FaLink href_in="//t.me/louislabs" fa_class_in="fab fa-telegram fa-2x" />
               </li>
             </ul>
 
