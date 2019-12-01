@@ -2,32 +2,15 @@ import React, { Component } from 'react';
 
 import Highlight from 'react-highlight.js'
 
-import { Doughnut } from 'react-chartjs-2';
+import { Line, Bar, Radar, Doughnut, Polar, Bubble, Scatter } from 'react-chartjs-2';
 
-let data={
-  labels: [ 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange' ],
-  datasets: [ {
-    label: '# of Votes',
-    data: [ 12, 19, 3, 5, 2, 3 ],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)'
-    ],
-    borderColor: [
-      'rgba(255, 99, 132, 1)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)'
-    ],
-    borderWidth: 1
-  } ]
-}
+import testData from './testData.json'
+import testOptions from './testOptions.json'
+
+import './TestPage.css'
+
+let data=testData
+let options=testOptions
 
 class TestPage extends Component{
   render(){
@@ -38,15 +21,54 @@ class TestPage extends Component{
           <p class="subtitle">Aligned with the right column</p>
           <div class="content">
             <div className="columns">
-              <div className="column is-6">
-                <Doughnut data={data} />
-              </div>
-              <div className="column is-6">
 
-                <Highlight language={'plaintext'}>
-                  {`IS_LOADING_TEXT`}
+              <div className="column">
+                <Highlight language={'json'}>
+                  // optinos.json
+                  {JSON.stringify(options, null , 1)}
+
+                  // data.json
+                  {JSON.stringify(data, null , 1)}
                 </Highlight>
+              </div>
 
+              <div className="column is-8">
+                <div className="columns">
+                  <div className="column is-6">
+                    <div className="graph-canvas">
+                      <Line data={data} options={options} />
+                    </div>
+                  </div>
+                  <div className="column is-6">
+                    <Bar data={data} options={options} />
+                  </div>
+
+                </div>
+
+                <div className="columns">
+                  <div className="column is-6">
+                    <Radar data={data} options={options} />
+                  </div>
+                  <div className="column is-6">
+                    <Doughnut data={data} options={options} />
+                  </div>
+
+                </div>
+
+                <div className="columns">
+                  <div className="column is-6">
+                    <Polar area data={data} options={options} />
+                  </div>
+                  <div className="column is-6">
+                    <Bubble data={data} options={options} />
+                  </div>
+                </div>
+
+                <div className="columns">
+                  <div className="column is-4">
+                    <Scatter data={data} options={options} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
