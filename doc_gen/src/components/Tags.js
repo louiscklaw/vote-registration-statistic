@@ -34,8 +34,9 @@ let color_map = {
 
 export default ({tag_text}) => {
   return(
-    <span style={{backgroundColor: color_map[tag_text.toLowerCase()]}} className="tag">
-      {tag_text}
+    <span
+      style={{backgroundColor: color_map[tag_text.toLowerCase()]}} className="tag">
+      <a href={"/by_tags/"+tag_text}>{tag_text}</a>
     </span>
   )
 }

@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {UPDATE_FILTER_TEXT, UPDATE_IS_SEARCHING} from '../reducers/ActionType'
 
+import { withRouter } from "react-router";
+import { compose } from "redux";
+
+
 import Nav from './Nav'
 
 import './Hero.css'
@@ -40,6 +44,13 @@ class Hero extends Component{
     }else{
       return (``)
     }
+  }
+
+  componentDidMount(){
+    let match = this.props.match
+    console.log('helloworld')
+    console.log(match.params.filter_by_tags)
+
   }
 
   showSearchInput(show_in) {
@@ -102,4 +113,7 @@ const mapDispatchToProps = (dispatch)  =>{
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hero)
+export default compose(
+  withRouter,
+  connect(mapStateToProps, mapDispatchToProps)
+)(Hero)

@@ -50,6 +50,14 @@ class AppMain extends Component{
           </section>
         </Route>
 
+        <Route path="/by_tags/:filter_by_tags">
+          <ScrollToTop />
+          <Hero show_search_input={true} />
+          <section className="section">
+            <ApiList all_api_list={this.props.all_api_manifest} />
+          </section>
+        </Route>
+
       </Switch>
     )
   }
