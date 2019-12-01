@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {connect} from 'react-redux'
-import {UPDATE_FILTER_TEXT} from '../reducers/ActionType'
+import {UPDATE_FILTER_TEXT, UPDATE_IS_SEARCHING} from '../reducers/ActionType'
 
 import Nav from './Nav'
 
@@ -9,13 +9,37 @@ import './Hero.css'
 
 class Hero extends Component{
 
+  handleUserInputFilterText(e){
+    let user_input = e.target.value
+
+    if (e.target.value.length > 0 ){
+      this.props.updateIsSearching(true)
+    }else{
+      this.props.updateIsSearching(false)
+    }
+
+    return user_input.split(' ')
+      .filter( x => x.trim() != '')
+  }
+
   handleOnChange(e){
-    this.props.update_text(e.target.value)
+    this.props.update_text(this.handleUserInputFilterText(e))
   }
 
   getTotalApiCount(){
-    let api_found = Object.keys(this.props.api_dictionary).length
-    return api_found
+    let api_found_in_dictionary = Object.keys(this.props.api_dictionary).length
+    return api_found_in_dictionary
+  }
+
+  showApiFound(){
+    let api_found_with_criteria = this.props.found_api_number
+    if (api_found_with_criteria > 0 && this.props.isSearching){
+      return (
+        `, ${api_found_with_criteria} api found`
+      )
+    }else{
+      return (``)
+    }
   }
 
   showSearchInput(show_in) {
@@ -30,7 +54,10 @@ class Hero extends Component{
                 <i className="fas fa-binoculars"></i>
               </span>
             </p>
-            <p className="subtitle is-3 total-api-count">{this.getTotalApiCount()} API found</p>
+            <p className="subtitle is-6 total-api-count">
+              {this.getTotalApiCount()} API in dictionary{this.showApiFound()}
+            </p>
+
           </div>
         </div>
       )
@@ -58,7 +85,9 @@ class Hero extends Component{
 const mapStateToProps = (state) => {
   return {
     posts: state.posts,
-    api_dictionary: state.api_dictionary
+    api_dictionary: state.api_dictionary,
+    found_api_number: state.found_api_number,
+    isSearching: state.isSearching
   }
 }
 
@@ -66,6 +95,9 @@ const mapDispatchToProps = (dispatch)  =>{
   return {
     update_text: (text) => {
       dispatch({type: UPDATE_FILTER_TEXT, text})
+    },
+    updateIsSearching: (is_searching) => {
+      dispatch({type: UPDATE_IS_SEARCHING, is_searching})
     }
   }
 }
