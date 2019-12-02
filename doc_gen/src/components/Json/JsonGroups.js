@@ -6,7 +6,7 @@ import './JsonGroups.css'
 
 class JsonGroups extends Component{
   render(){
-    let {display_name, description, image_display_url, title, id, name} = this.props.json_group_in[0]
+    let {id} = this.props.json_group_in[0]
 
     return(
         <div className="tile is-parent is-half is-shady">
