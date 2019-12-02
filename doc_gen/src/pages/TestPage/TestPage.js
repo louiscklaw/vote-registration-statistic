@@ -17,12 +17,12 @@ class TestPage extends Component{
     return (
       <div class="tile is-parent is-shady">
         <article class="tile is-child notification is-white">
-          <p class="title">Wide column</p>
-          <p class="subtitle">Aligned with the right column</p>
+          <p class="title">Test Page</p>
+          <p class="subtitle">page incubator</p>
           <div class="content">
             <div className="columns">
 
-              <div className="column">
+              <div className="column is-one-third">
                 <Highlight language={'json'}>
                   // optinos.json
                   {JSON.stringify(options, null , 1)}
@@ -32,7 +32,7 @@ class TestPage extends Component{
                 </Highlight>
               </div>
 
-              <div className="column is-8">
+              <div className="column is-two-thirds">
                 <div className="columns">
                   <div className="column is-6">
                     <div className="graph-canvas">

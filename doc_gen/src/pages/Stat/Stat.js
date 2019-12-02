@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+
+import Highlight from 'react-highlight.js'
+import Clipboard from 'react-clipboard.js';
 
 import SampleTable from './SampleTable'
 // import { JsonToTable } from "react-json-to-table";
-
-import {connect} from 'react-redux'
 
 import './Stat.css'
 
@@ -16,6 +18,31 @@ class LastUpdate extends Component{
 }
 
 class Stat extends Component{
+  countFormats(){
+    let formats = {}
+    let in_json = this.props.api_dictionary
+
+    Object.keys( in_json )
+      .forEach( k => {
+        in_json[ k ].result.resources
+          .forEach( r => {
+            if ( formats[ r.format ] == undefined ) {
+              formats[ r.format ] = 1
+            } else {
+              formats[ r.format ] += 1
+            }
+          } )
+      } )
+
+    return [
+      Object.keys(formats).map(k => `"${k}"`),
+      Object.keys(formats).map(k => `${formats[k]}`)
+    ].join('\n')
+
+  }
+
+
+
   getFormats() {
     let formats = {}
     let formats_1 = []
@@ -52,10 +79,27 @@ class Stat extends Component{
         <div className="tile is-ancestor">
           <div className="tile is-parent is-shady">
             <div className="tile is-child">
-              <p>最後更新: </p>
-              <LastUpdate />
-              <p>主要格式統計: </p>
-              <SampleTable table_in={this.getFormats()}/>
+              <div className="columns">
+                <div className="column is-full">
+                    <h2 className="title is-6">最後更新: </h2>
+                    <LastUpdate />
+                </div>
+              </div>
+              <div className="columns">
+                <div className="column is-full">
+                  <h2 className="title is-6">主要格式統計: </h2>
+
+                  <Highlight language={'csv'}>
+                    {this.countFormats()}
+                  </Highlight>
+
+                  <Clipboard data-clipboard-text={this.countFormats()}>
+                    Copy CSV
+                  </Clipboard>
+
+                  <SampleTable table_in={this.getFormats()}/>
+                </div>
+              </div>
             </div>
           </div>
         </div>

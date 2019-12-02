@@ -8,6 +8,7 @@ import Hero from '../../components/Hero'
 
 import About from '../About/About'
 import Stat from '../Stat/Stat'
+import ChartjsDraft from '../ChartjsDraft/ChartjsDraft'
 import TestPage from '../TestPage/TestPage'
 
 import ApiList from '../ApiList/ApiList'
@@ -48,6 +49,14 @@ class AppMain extends Component{
           <Hero show_search_input={false} />
           <section className="section">
             <TestPage />
+          </section>
+        </Route>
+
+        <Route path="/chartjs_draft">
+          <ScrollToTop />
+          <Hero show_search_input={false} />
+          <section className="section">
+            <ChartjsDraft />
           </section>
         </Route>
 

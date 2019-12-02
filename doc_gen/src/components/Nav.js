@@ -31,7 +31,7 @@ export default () => {
               <TopMenu />
               <span className="navbar-item">
                 <a className="button is-white is-outlined"
-                  href="https://github.com/louiscklaw/vote-registration-statistic">
+                  href="//github.com/louiscklaw/vote-registration-statistic">
                   <span className="icon">
                     <i className="fab fa-github"></i>
                   </span>

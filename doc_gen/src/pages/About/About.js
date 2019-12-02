@@ -16,7 +16,6 @@ class About extends Component{
     fetch(getCSVFrFirebase('https://www.afcd.gov.hk/data/tree_walks_tc.csv'))
       .then( res => res.text())
       .then(res_text => {
-        console.log(res_text)
         this.setState({fetch_result: res_text})
       })
   }
@@ -28,10 +27,18 @@ class About extends Component{
   render (){
     return (
       <div>
-        <p>about page</p>
-        <pre>
-          {this.state.fetch_result}
-        </pre>
+        <div className="columns">
+          <div class="intro column is-8 is-offset-2">
+            <h2 class="title">About</h2><br />
+            <p class="subtitle">A simple page to demonstrate react and open.gov.hk</p>
+          </div>
+        </div>
+        <div className="columns">
+          <div class="intro column is-8 is-offset-2">
+            <h2 class="title">Credits:</h2><br />
+            <a href="//bulmatemplates.github.io/bulma-templates/templates/hero.html" class="subtitle">bulmatemplates.github.io</a>
+          </div>
+        </div>
       </div>
     )
   }

@@ -7,13 +7,25 @@ import {checkDevelop} from '../../common'
 import './TopMenu.css'
 
 class TopMenu extends Component{
+  liChartjsDraft(){
+    if (checkDevelop()){
+      return(
+        <li>
+          <Link to="/chartjs_draft">chart_js</Link>
+        </li>
+      )
+    }
+    return ''
+  }
+
   genTestLink(){
-    if (checkDevelop())
-    return(
-      <li>
-        <Link to="/testpage">TestPage</Link>
-      </li>
-    )
+    if (checkDevelop()){
+      return(
+        <li>
+          <Link to="/testpage">TestPage</Link>
+        </li>
+      )
+    }
   }
 
   render(){
@@ -30,6 +42,7 @@ class TopMenu extends Component{
         </li>
 
         {this.genTestLink()}
+        {this.liChartjsDraft()}
 
       </ul>
     )

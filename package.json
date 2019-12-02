@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "chart.js": "^2.9.3",
-    "react-chartjs-2": "^2.8.0"
+    "react-clipboard.js": "^2.0.16"
   }
 }
