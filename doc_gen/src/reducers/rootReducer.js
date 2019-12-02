@@ -30,7 +30,10 @@ const updateIsSearching = (state, action) => {
 }
 
 const rootReducer = ( state = initState, action ) => {
-  console.log('rootreducer', action.type)
+  if(checkDevelop()){
+    console.log('rootreducer', action.type)
+  }
+
   switch (action.type) {
     case UPDATE_FILTER_TEXT:
       updateIsSearching(state, action)
