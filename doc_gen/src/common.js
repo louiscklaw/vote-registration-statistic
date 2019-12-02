@@ -38,7 +38,7 @@ function highlightPlaintext(text_in){
 }
 
 function highlightJson(text_in){
-  return highlightSomething(text_in, 'json')
+  return highlightSomething(JSON.stringify(text_in, null, 1), 'json')
 }
 
 function highlightJavascript(text_in){

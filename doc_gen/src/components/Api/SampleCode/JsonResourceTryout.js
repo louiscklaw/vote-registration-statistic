@@ -77,7 +77,11 @@ class JsonResourceTryout extends Component{
 
         )
       }else{
-        return (highlightJson(call_result))
+        return(
+          <div>
+            {highlightJson(call_result)}
+          </div>
+        )
       }
     }
 
@@ -98,6 +102,13 @@ class JsonResourceTryout extends Component{
 
           </article>
         </div>
+    )
+  }
+  render1(){
+    return(
+      <div>
+        {this.renResult()}
+      </div>
     )
   }
 }
