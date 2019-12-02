@@ -74,7 +74,7 @@ class Hero extends Component{
       return (
         <div className="hero-body">
           <div className="container has-text-centered">
-            <h1 className="title">香港統計數字一覽</h1>
+            <h1 className="title">香港統計數字</h1>
             <p className="control has-icons-left">
               <input className="input is-rounded is-large" type="text" placeholder="Search" onChange={(e)=>{this.handleOnChange(e)}} value={this.state.searchbox_text} />
               <span className="icon is-small is-left">
