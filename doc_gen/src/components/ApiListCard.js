@@ -68,7 +68,7 @@ class ApiDetailCard extends Component {
           </div>
           <div className="detail-link-list">
             <i className="fas fa-search"></i>
-            <Link to={`api_detail/${package_name}`} className="detail-link">詳細資料</Link>
+            <Link to={`/api_detail/${package_name}`} className="detail-link">詳細資料</Link>
           </div>
         </Card>
       </div>

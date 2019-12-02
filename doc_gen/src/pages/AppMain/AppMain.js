@@ -2,30 +2,32 @@ import React, { Component } from 'react';
 import {Switch, Route} from 'react-router-dom'
 
 import {connect} from 'react-redux'
+import { withRouter } from "react-router";
+import { compose } from "redux";
+
 
 import ScrollToTop from '../../components/browser/ScrollToTop'
-import Hero from '../../components/Hero'
+import Hero from '../../components/Hero';
 
 import About from '../About/About'
 import Stat from '../Stat/Stat'
 import ChartjsDraft from '../ChartjsDraft/ChartjsDraft'
 import TestPage from '../TestPage/TestPage'
+import FilterByTags from '../FilteredPage/FilterByTags';
 
 import ApiList from '../ApiList/ApiList'
 import ApiDetail from '../ApiDetail'
+import AppHome from '../AppHome/AppHome';
+
 
 
 class AppMain extends Component{
   render(){
+    console.log(this.props.match.params.filter_by_tags)
     return(
       <Switch>
         <Route exact path="/">
-          <ScrollToTop />
-          <Hero show_search_input={true} />
-          <section className="section">
-
-            <ApiList all_api_list={this.props.all_api_manifest} />
-          </section>
+          <AppHome></AppHome>
         </Route>
 
         <Route path="/stat">
@@ -69,13 +71,7 @@ class AppMain extends Component{
         </Route>
 
         <Route path="/by_tags/:filter_by_tags">
-          <ScrollToTop />
-          <Hero show_search_input={true} />
-          <div className="app-main">
-            <section className="section">
-              <ApiList all_api_list={this.props.all_api_manifest} />
-            </section>
-          </div>
+          <FilterByTags></FilterByTags>
         </Route>
 
       </Switch>
@@ -89,4 +85,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(AppMain)
+export default compose(
+  withRouter,
+  connect(mapStateToProps)
+)(AppMain)

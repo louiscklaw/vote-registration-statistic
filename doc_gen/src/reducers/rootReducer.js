@@ -12,14 +12,15 @@ import all_api_manifest_99 from '../api_catalogue/all_api_manifest_99.json'
 
 const initState = {
   posts: '',
-  filters: [],
   api_dictionary: (checkDevelop() ? all_api_manifest_99: all_api_manifest),
   found_api_number: 0,
+  search_string:"",
+  search_array:[],
   isSearching: false
 }
 
 const updateIsSearching = (state, action) => {
-  let is_searching = state.filters.length > 0
+  let is_searching = state.search_string.length > 0
   console.log('updateIsSearching', is_searching)
   return {
     ...state,
@@ -29,13 +30,15 @@ const updateIsSearching = (state, action) => {
 }
 
 const rootReducer = ( state = initState, action ) => {
+  console.log('rootreducer', action.type)
   switch (action.type) {
     case UPDATE_FILTER_TEXT:
       updateIsSearching(state, action)
+
       return {
         ...state,
         posts: action.text,
-        filters: action.text,
+        search_string: action.text,
       }
 
     case UPDATE_IS_SEARCHING:

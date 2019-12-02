@@ -33,10 +33,7 @@ class Hero extends Component{
 
   handleOnChange(e){
     this.props.updateSearchFilter(this.handleUserInputFilterText(e.target.value))
-    this.setState({
-      ...this.state,
-      searchbox_text: e.target.value
-    })
+
   }
 
   getTotalApiCount(){
@@ -56,27 +53,29 @@ class Hero extends Component{
   }
 
   componentDidMount(){
-    if (Object.keys(this.props.match.params).includes('filter_by_tags')){
-      this.setState({
-        ...this.state,
-        searchbox_text: this.props.match.params.filter_by_tags
-      })
-      this.props.updateSearchFilter("房屋")
-
-    }else{
-
-    }
+    console.log('hero.js componentDidMount')
 
   }
 
+
   showSearchInput(show_in) {
     if(show_in){
+
+
       return (
         <div className="hero-body">
           <div className="container has-text-centered">
             <h1 className="title">香港統計數字</h1>
             <p className="control has-icons-left">
-              <input className="input is-rounded is-large" type="text" placeholder="Search" onChange={(e)=>{this.handleOnChange(e)}} value={this.state.searchbox_text} />
+              <input
+                id="search_input"
+                className="input is-rounded is-large"
+                type="text"
+                placeholder="Search"
+                onChange={(e)=>{this.handleOnChange(e)}}
+                value={this.props.search_string}
+                />
+
               <span className="icon is-small is-left">
                 <i className="fas fa-binoculars"></i>
               </span>
@@ -98,7 +97,7 @@ class Hero extends Component{
     }
   }
   render(){
-    return (
+　   return (
       <section className="hero is-info is-medium is-bold">
         <div className="hero-head">
           <Nav />
@@ -114,19 +113,16 @@ const mapStateToProps = (state) => {
     posts: state.posts,
     api_dictionary: state.api_dictionary,
     found_api_number: state.found_api_number,
-    isSearching: state.isSearching
+    isSearching: state.isSearching,
+    search_string: state.search_string
   }
 }
 
 const mapDispatchToProps = (dispatch)  =>{
   return {
     updateSearchFilter: (text) => {
-      console.log('udpateSearchFilter...', text)
       dispatch({type: UPDATE_FILTER_TEXT, text})
-    },
-    // updateIsSearching: (is_searching) => {
-    //   dispatch({type: UPDATE_IS_SEARCHING, is_searching})
-    // }
+    }
   }
 }
 

@@ -44,14 +44,15 @@ class ApiList extends Component{
   }
 
   componentDidMount(){
-    this.props.clear_filter_text()
+    // this.props.clear_filter_text()
   }
 
   render(){
-    let {all_api_list, filters } = this.props
+    let {all_api_list, search_string } = this.props
+    console.log('this.props', this.props)
 
     let api_cards = Object.keys(all_api_list)
-      .filter( k => { return this.filterUsingKeyword(filters, all_api_list[k]) })
+      .filter( k => { return this.filterUsingKeyword([search_string], all_api_list[k]) })
       .map( open_api => {
         // let{groups, organization, resources} = all_api_list[open_api].result
 
@@ -76,7 +77,7 @@ class ApiList extends Component{
 const mapStateToProps = (state) => {
   return {
     posts: state.posts,
-    filters: state.filters,
+    search_string: state.search_string,
     found_api_number: state.found_api_number
   }
 }
