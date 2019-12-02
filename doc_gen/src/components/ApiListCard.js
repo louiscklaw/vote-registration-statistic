@@ -18,7 +18,7 @@ class ApiDetailCard extends Component {
 
   componentDidMount(){
     let package_to_check = this.props.package_to_check
-    let json_to_fetch = `assets/api_details/${package_to_check}.json`
+    // let json_to_fetch = `assets/api_details/${package_to_check}.json`
     this.setState({
       ...this.state,
       isLoading: true
@@ -26,7 +26,7 @@ class ApiDetailCard extends Component {
   }
 
   getApiDescription(){
-    const {json_to_list, package_name} = this.props
+    const {json_to_list} = this.props
     let {title, name, notes} = json_to_list.result
 
     if (title === notes){
@@ -38,8 +38,8 @@ class ApiDetailCard extends Component {
   }
 
   getApiDetail(json_in, package_name){
-    let {resources, groups, organization} = json_in.result
-    let {title, name, notes} = json_in.result
+    let {resources, groups} = json_in.result
+    let {title} = json_in.result
 
     let set_group_names = new Set([
       ...groups.map(x => x.display_name),
