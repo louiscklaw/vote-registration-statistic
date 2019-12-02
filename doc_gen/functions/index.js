@@ -19,15 +19,25 @@ function chopReply(reply_in, max_chop_len){
 }
 
 function chopCSVReply(csv_reply_in, max_row){
+  let csv_reply_in1 = `a,b
+1,2
+3,4
+5,6
+7,8
+9,0
+3,4
+5,6
+7,8
+9,0`
+
   let csv_split = csv_reply_in.split('\n')
-  console.log('csv_split.length', csv_split.length)
   if (csv_split.length > max_row){
-    console.log('max_row', max_row)
-    console.log('csv_split',csv_split)
-    console.log('result',csv_split.slice(0, 5))
-
-
-    return [1,2,3,4,5].slice(0, 5).join('')
+    let chopped_row = csv_split.length - max_row
+    let chopped_row_text = ''
+    if (chopped_row > 0){
+      chopped_row_text = `\n\n(${chopped_row} row chopped...)`
+    }
+    return `${csv_split.slice(0, max_row).join('\n')}${chopped_row_text}`
   }else{
     return csv_reply_in
   }
