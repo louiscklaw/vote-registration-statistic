@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {connect} from 'react-redux'
-import {UPDATE_FILTER_TEXT, UPDATE_IS_SEARCHING} from '../../reducers/ActionType'
+import {UPDATE_FILTER_TEXT} from '../../reducers/ActionType'
 
 import {Link} from 'react-router-dom'
 
