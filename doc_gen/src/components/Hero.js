@@ -10,6 +10,7 @@ import { compose } from "redux";
 import Nav from './Nav'
 
 import './Hero.css'
+import { debugLog } from '../common';
 
 class Hero extends Component{
   constructor(){
@@ -53,7 +54,7 @@ class Hero extends Component{
   }
 
   componentDidMount(){
-    console.log('hero.js componentDidMount')
+    debugLog('hero.js componentDidMount')
 
   }
 
