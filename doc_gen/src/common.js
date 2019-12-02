@@ -65,6 +65,12 @@ function checkDevelop(){
   }
 }
 
+function debugLog(text_in){
+  if(checkDevelop()){
+    console.log(text_in)
+  }
+}
+
 export {
   helloworld,
   chopLongString,
@@ -73,5 +79,6 @@ export {
   highlightJson,
   highlightJavascript,
   highlightErrorText,
-  checkDevelop
+  checkDevelop,
+  debugLog
 }

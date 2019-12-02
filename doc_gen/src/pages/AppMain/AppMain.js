@@ -18,12 +18,14 @@ import FilterByTags from '../FilteredPage/FilterByTags';
 import ApiList from '../ApiList/ApiList'
 import ApiDetail from '../ApiDetail'
 import AppHome from '../AppHome/AppHome';
+import { debugLog } from '../../common';
 
 
 
 class AppMain extends Component{
   render(){
-    console.log(this.props.match.params.filter_by_tags)
+    debugLog(this.props.match.params.filter_by_tags)
+
     return(
       <Switch>
         <Route exact path="/">

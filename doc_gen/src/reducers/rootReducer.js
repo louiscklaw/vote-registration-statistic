@@ -1,4 +1,4 @@
-import {checkDevelop} from '../common'
+import {checkDevelop, debugLog} from '../common'
 
 
 import {
@@ -30,9 +30,7 @@ const updateIsSearching = (state, action) => {
 }
 
 const rootReducer = ( state = initState, action ) => {
-  if(checkDevelop()){
-    console.log('rootreducer', action.type)
-  }
+  debugLog('rootreducer', action.type)
 
   switch (action.type) {
     case UPDATE_FILTER_TEXT:
