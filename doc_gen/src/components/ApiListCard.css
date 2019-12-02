@@ -1,0 +1,41 @@
+
+.api-detail .api-name {
+  font-size: 1em;
+}
+
+.api-detail .content {
+  text-align: left;
+}
+
+.horizontal-list{
+  width: 100%;
+  display: inline-flex;
+  padding-top:2px;
+  padding-bottom: 1px;
+}
+
+.horizontal-list i{
+  padding-top: 5px;
+  padding-right: 3px;
+  width: 24px;
+  text-align: center;
+  align-items: center;
+}
+
+.detail-link-list i {
+  padding-top: 5px;
+  padding-right: 3px;
+  width: 24px;
+  text-align: center;
+  align-items: center;
+}
+
+.tag-list {
+  width: 100%;
+  display: inline-flex;
+
+}
+
+.detail-link{
+  font-size: 0.9em;
+}

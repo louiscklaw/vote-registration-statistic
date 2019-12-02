@@ -1,0 +1,7 @@
+.notification pre {
+  background-color: #222;
+  border-radius: 0.5em;
+
+  white-space: pre-wrap;
+
+}

@@ -1,0 +1,8 @@
+
+.chartjs-draft textarea {
+  font-family: Monaco;
+}
+
+.chartjs-draft .graph-canvas {
+  min-height: 300px;
+}

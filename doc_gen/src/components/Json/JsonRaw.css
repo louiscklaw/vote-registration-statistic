@@ -1,0 +1,11 @@
+.json-title {
+  text-transform: uppercase;
+}
+
+.json-raw-container pre {
+  white-space: pre-wrap;
+}
+
+.json-raw-container {
+  width: 100%;
+}

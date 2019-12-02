@@ -1,0 +1,12 @@
+.app-detail article{
+  text-align: left;
+}
+
+.app-detail {
+  min-height: 50vh;
+}
+
+.back {
+  text-align: left;
+  align-items: left;
+}

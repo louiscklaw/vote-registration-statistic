@@ -1,0 +1,7 @@
+.json-title {
+  text-transform: uppercase;
+}
+
+td a {
+  word-break: break-all;
+}

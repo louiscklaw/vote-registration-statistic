@@ -3,16 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "chart.js": "^2.9.3",
+    "firebase-admin": "^8.8.0",
+    "firebase-functions": "^3.3.0",
     "react": "^16.12.0",
+    "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-highlight.js": "^1.0.7",
+    "react-json-to-table": "^0.1.5",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "redux": "^4.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "postbuild": "react-snap",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build_w": "nodemon -w src --ext '*' --exec 'yarn build'",
+    "test_w": "nodemon -w src --ext '*' --exec 'yarn test'"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,0 +1,10 @@
+.card {
+  /* background-color: red; */
+  /* height: 200px; */
+  width: 200px;
+  min-height: 300px;
+}
+
+.card .card-content {
+  padding: 5px;
+}

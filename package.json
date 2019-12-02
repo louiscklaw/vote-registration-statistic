@@ -1,17 +1,5 @@
 {
-  "name": "vote-registration-statistic",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "pdf-parse": "^1.1.1",
-    "pdf-table-extractor": "^1.0.3",
-    "x-ray": "^2.3.4"
+    "react-clipboard.js": "^2.0.16"
   }
 }

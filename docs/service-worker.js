@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://louiscklaw.github.io/vote-registration-statistic/precache-manifest.2de0dfd29ebbcf6d05a28a3d2f3a2cfc.js"
+  "/precache-manifest.478b38f9014015951b261f1afbd77b03.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -34,6 +34,6 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("https://louiscklaw.github.io/vote-registration-statistic/index.html"), {
-  
+
   blacklist: [/^\/_/,/\/[^\/?]+\.[^\/]+$/],
 });
