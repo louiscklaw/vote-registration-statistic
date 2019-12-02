@@ -21,7 +21,7 @@ const initState = {
 
 const updateIsSearching = (state, action) => {
   let is_searching = state.search_string.length > 0
-  console.log('updateIsSearching', is_searching)
+  debugLog('updateIsSearching', is_searching)
   return {
     ...state,
     isSearching: is_searching

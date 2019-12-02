@@ -6,7 +6,7 @@ import { withRouter } from "react-router";
 import ScrollToTop from '../../components/browser/ScrollToTop';
 import Hero from '../../components/Hero';
 
-import {UPDATE_FILTER_TEXT, UPDATE_IS_SEARCHING} from '../../reducers/ActionType'
+import {UPDATE_FILTER_TEXT} from '../../reducers/ActionType'
 import ApiList from '../../pages/ApiList/ApiList'
 
 class AppHome extends Component{
@@ -14,7 +14,7 @@ class AppHome extends Component{
     this.props.updateSearchFilter('')
     return (
       <div>
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         <Hero show_search_input={true} />
         <section className="section">
           <ApiList search_filters={[]} all_api_list={this.props.all_api_manifest} />

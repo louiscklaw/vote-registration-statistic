@@ -18,6 +18,16 @@ class TopMenu extends Component{
     return ''
   }
 
+  genTravisLink(){
+    if(checkDevelop()){
+      return(
+        <li>
+          <a href="//travis-ci.org/louiscklaw/vote-registration-statistic" target="_blank">Travis-ci</a>
+        </li>
+      )
+    }
+  }
+
   genTestLink(){
     if (checkDevelop()){
       return(
@@ -43,6 +53,7 @@ class TopMenu extends Component{
 
         {this.genTestLink()}
         {this.liChartjsDraft()}
+        {this.genTravisLink()}
 
       </ul>
     )

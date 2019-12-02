@@ -6,7 +6,7 @@ import { withRouter } from "react-router";
 import { compose } from "redux";
 
 
-import ScrollToTop from '../../components/browser/ScrollToTop'
+// import ScrollToTop from '../../components/browser/ScrollToTop'
 import Hero from '../../components/Hero';
 
 import About from '../About/About'
@@ -20,8 +20,6 @@ import ApiDetail from '../ApiDetail'
 import AppHome from '../AppHome/AppHome';
 import { debugLog } from '../../common';
 
-
-
 class AppMain extends Component{
   render(){
     debugLog(this.props.match.params.filter_by_tags)
@@ -33,7 +31,7 @@ class AppMain extends Component{
         </Route>
 
         <Route path="/stat">
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <Hero show_search_input={false} />
           <section className="section">
             <Stat />
@@ -41,7 +39,7 @@ class AppMain extends Component{
         </Route>
 
         <Route path="/about">
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <Hero show_search_input={false} />
           <section className="section">
             <About />
@@ -49,7 +47,7 @@ class AppMain extends Component{
         </Route>
 
         <Route path="/testpage">
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <Hero show_search_input={false} />
           <section className="section">
             <TestPage />
@@ -57,7 +55,7 @@ class AppMain extends Component{
         </Route>
 
         <Route path="/chartjs_draft">
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <Hero show_search_input={false} />
           <section className="section">
             <ChartjsDraft />
@@ -65,7 +63,7 @@ class AppMain extends Component{
         </Route>
 
         <Route path="/api_detail/:api_name">
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <Hero show_search_input={false} />
           <section className="section">
             <ApiDetail api_catalogue={this.props.all_api_manifest}/>
