@@ -18,5 +18,6 @@ script:
   - yarn test
   - yarn build
 
+
 notifications:
   slack: louislabs:x4D51HjnR30LGpqZXrdbqUgB
