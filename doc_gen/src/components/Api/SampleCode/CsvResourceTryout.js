@@ -28,7 +28,7 @@ class CsvResourceTryout extends Component{
   testCall( url_in ) {
     let sample_code_src = csv_api_call_sample(url_in)
 
-    fetch(getCSVFrFirebase(url_in))
+    fetch(getCSVFrFirebase(url_in, 3))
       .then( res => res.text())
       .then(res_text => {
         this.setState({
