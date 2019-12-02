@@ -6,7 +6,7 @@ dist: trusty
 language: node_js
 
 node_js:
-  - $FIREBASE_NODE_VER
+  - 8
 
 install:
   - cd $TRAVIS_BUILD_DIR/doc_gen && yarn install
@@ -17,7 +17,6 @@ script:
   - echo $TRAVIS_NODE_VERSION
   - yarn test
   - yarn build
-
 
 notifications:
   slack: louislabs:x4D51HjnR30LGpqZXrdbqUgB
