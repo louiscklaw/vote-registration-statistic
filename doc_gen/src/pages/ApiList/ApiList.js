@@ -7,6 +7,7 @@ import {UPDATE_FILTER_TEXT, UPDATE_FOUND_NUMBER} from '../../reducers/ActionType
 import ApiListCard from '../../components/ApiListCard'
 
 import './ApiList.css'
+import { checkDevelop } from '../../common';
 
 // export default ({all_api_list}) => {
 class ApiList extends Component{
@@ -49,7 +50,9 @@ class ApiList extends Component{
 
   render(){
     let {all_api_list, search_string } = this.props
-    console.log('this.props', this.props)
+    if (checkDevelop()){
+      console.log('this.props', this.props)
+    }
 
     let api_cards = Object.keys(all_api_list)
       .filter( k => { return this.filterUsingKeyword([search_string], all_api_list[k]) })
