@@ -55,6 +55,16 @@ function highlightErrorText(err_text_in, firebase_test_link){
   )
 }
 
+function checkDevelop(){
+  if (process.env.NODE_ENV === 'development') {
+    console.log('develop environment')
+
+    return true
+  }else{
+    return false
+  }
+}
+
 export {
   helloworld,
   chopLongString,
@@ -62,5 +72,6 @@ export {
   highlightPlaintext,
   highlightJson,
   highlightJavascript,
-  highlightErrorText
+  highlightErrorText,
+  checkDevelop
 }

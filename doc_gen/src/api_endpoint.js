@@ -18,13 +18,13 @@ let format_testlink_mapper = {
   json: 'getJSON'
 }
 
-function getFirebaseTestLink(path_in, format_in){
-  return getEndPoint(format_testlink_mapper[format_in])+'?q='+path_in
+function getFirebaseTestLink(path_in, format_in, max_length){
+  return getEndPoint(format_testlink_mapper[format_in])+'?q='+path_in+"&max_row="+max_length
 }
 
-function getCSVFrFirebase(url_csv_path){
+function getCSVFrFirebase(url_csv_path, max_row){
   // return getEndPoint('getCSV')+'?q='+url_csv_path
-  return getFirebaseTestLink(url_csv_path, 'csv')
+  return getFirebaseTestLink(url_csv_path, 'csv', max_row)
 }
 
 function getJSONFirebaseTestLink(url_json_path){

@@ -1,3 +1,5 @@
+import {checkDevelop} from '../common'
+
 
 import {
   UPDATE_IS_SEARCHING,
@@ -5,12 +7,13 @@ import {
   UPDATE_FOUND_NUMBER
 } from './ActionType'
 
-import all_api_manifest from '../api_catalogue/all_api_manifest_9.json'
+import all_api_manifest from '../api_catalogue/all_api_manifest.json'
+import all_api_manifest_99 from '../api_catalogue/all_api_manifest_99.json'
 
 const initState = {
   posts: '',
   filters: [],
-  api_dictionary: all_api_manifest,
+  api_dictionary: (checkDevelop() ? all_api_manifest_99: all_api_manifest),
   found_api_number: 0,
   isSearching: false
 }
