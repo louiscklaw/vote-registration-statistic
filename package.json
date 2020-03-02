@@ -8,7 +8,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "npx commitlint -e $GIT_PARAMS"
+      "commit-msg": "npx commitlint -e $GIT_PARAMS",
+      "pre-push": "./build.sh"
     }
   }
 }
