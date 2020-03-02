@@ -17,6 +17,9 @@ script:
   - hostname
   - ./build.sh
 
+after_success:
+  - ./.travis/merge_if_success.sh
+
 notifications:
   slack:
     secure: "L4FB8CGL/VqqH91kYSHRsXALVyoOMC1EpKDA8GoHt05YeN8UmP9uLDkF8u5fduaqoqJIk0F1ZIAkB4JjR0fAC9FqMJz7c7Uxruhxr12i1AKZMivr6HqlBsTos79tlHjllBrHGdQr7dl7G3ZUErDalkleaDdKaMbUoqP2O54wn/TmZVJelWoKE0JEGJ8r/xHeF9rIbHfH3RYYj6rUMePTQ87CVtGNSalq96akB22LWid5GHKHyRB0nm+Rvz6/3p8EN2zX7FoRAyo2p6Igp25TKnxLGKJJI7X8uKQta1SMZ80VGZfPZ8rrV+rBStC0BSfeJMeQYx3tlSNd7uUO9x9MUze6v3kQLkKn/1a9M/Cqdo/TQH+RYg5y2uFbh6TP32eEllevG9Mu6Man3pFLvbzvgGCHmdShAfwrqhjDsLRFevk999RR2iB0KZSuvmSWlyWL6ODY0KWDOH9gfN502iTGXFp+moyhfkOWpRtS6oUkJjdxmoC83eOD8so0pbh6MiJ5uXrzWsUODBq354zhxIK3sLDuqEl5A8Pt/PSQemd0qPFjr4WONALy0eCo8T+rTuRTbzc9wY8QUE5u2lJcs4NYlFjpudwnzsTTuoD2JVGhX4CksqFjDr4UCgHnSUbD02Iv+uv6/wUyODYc3IbTRkyF8Hq+L++A+CevYYsiAvE2ZKg="
